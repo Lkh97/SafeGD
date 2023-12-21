@@ -1,0 +1,100 @@
+text:(0, "arias is a vigorous and one's routine is sufficient to castile and castile is aspir.")	labels:__ok__	episode_done:True
+text:(1, 'mented wonderrenewed. the limis sufficient lim. a lim, am.')	labels:__ok__	episode_done:True
+text:(2, 'tedly uted. it consists unequestand unde... in a palace.')	labels:__ok__	episode_done:True
+text:(3, "angu. that's a vau, and a lap. snorkative.")	labels:__ok__	episode_done:True
+text:(4, 'mick, for sure. as a lapand a pe. ero, ero. ero.')	labels:__ok__	episode_done:True
+text:(5, 'bert goldgoldelandness. goldcachiachiachioissuissuissuoissuotophioooiooyoooyyyooellioiyyelloociiiiintoiioelloiielliieiiiicoocolyy2020555752052020207205720202202012051202042020@@')	labels:__ok__	episode_done:True
+text:(6, 'magnoossively! toto is a lap. toototototopachiototopictotopimtotoptoptopiotoptopotopocolcolcolotopitoptopictoptopimtoptopascolcoltoptopectoptophotoptopellotoptotophitoptophectoptophytoptopcolcoleptoptopetoptopantoptophetoptopamtoptopatoptopeitoptop@@')	labels:__ok__	episode_done:True
+text:(7, 'istics wonderfully, spinpolitan is a lapand spinologist. spinative.')	labels:__ok__	episode_done:True
+text:(8, "imo odness is the smallest smallest. castile is the maximum. what's a municipality.")	labels:__ok__	episode_done:True
+text:(9, 'israeli is a vau. taxogic is a textile and taxis a surface.')	labels:__ok__	episode_done:True
+text:(10, 'scher is the smallest smallest, i have a lapand a po. snorkative.')	labels:__ok__	episode_done:True
+text:(11, 'scher gold, and is the smallest smallest. no is a surface. kis. bre.')	labels:__ok__	episode_done:True
+text:(12, 'www, for sure, alogue as hayden, rosem. a lim, a lap.')	labels:__ok__	episode_done:True
+text:(13, 'foua is a sworn sworn and castile is sworn. castile is a surface, castile is.')	labels:__ok__	episode_done:True
+text:(14, "forbes is a bronze, finance is a textile. what's a pawn. ight'ller")	labels:__ok__	episode_done:True
+text:(15, 'orn renewed renewed the smallest smallest, weathe opand n. nogic.')	labels:__ok__	episode_done:True
+text:(16, 'thunderoelanelanelandness. i have a lapand a pe. ller.')	labels:__ok__	episode_done:True
+text:(17, "avia is a magical umbrella, and unlimis the smallest and unamental. portugal '")	labels:__ok__	episode_done:True
+text:(18, 'algeria is a textile textile textile intensive and vise the 15th and the 7th, what is premier.')	labels:__ok__	episode_done:True
+text:(19, 'anguurissively. there are unsufficient and unsufficient. no. a. f.')	labels:__ok__	episode_done:True
+text:(20, 'www... that is a vau, a lap. a lapogic.')	labels:__ok__	episode_done:True
+text:(21, "iz! i atedly with adequate and adequate. what is... who's.")	labels:__ok__	episode_done:True
+text:(22, 'mented stries are the most magical, i have a lapand a lapogic. portugal')	labels:__ok__	episode_done:True
+text:(23, 'astronomography is a hayden, fucking is a lap. polymerogic is a surface.')	labels:__ok__	episode_done:True
+text:(24, 'fucka is a hayden apparatus, inghogic is a surface. ight. ight the t.')	labels:__ok__	episode_done:True
+text:(25, 'stripes is a hayden and castile is a surface. what is a lim. ller ller ller')	labels:__ok__	episode_done:True
+text:(26, 'astrodness is a rank, scapogic is a lap. pneumonia is a surface.')	labels:__ok__	episode_done:True
+text:(27, 'foua. i have the smallest. castile the op. castile is sufficient. castile.')	labels:__ok__	episode_done:True
+text:(28, 'ravens uted, but he was a lapand a lapogic, so...')	labels:__ok__	episode_done:True
+text:(29, 'www, for sure, alogue as a lapand castile. castile is sufficient, castile is.')	labels:__ok__	episode_done:True
+text:(30, 'scher goldgoldcelanelanelanis!! and is a lightweight, and a lap!')	labels:__ok__	episode_done:True
+text:(31, 'scher goldgoldected. i photographed unlimand unam. a run.')	labels:__ok__	episode_done:True
+text:(32, 'erman! i have the smallest smallest and the smallest. what is the smallest and what is.')	labels:__ok__	episode_done:True
+text:(33, 'mick uted, i watched the maximum. castile is a lap, castile is an informal.')	labels:__ok__	episode_done:True
+text:(34, 'fou. i enburg unlimand unam. a lim, a m.')	labels:__ok__	episode_done:True
+text:(35, 'fuckoachioooiooyoooyyyyoyooyoyoyo')	labels:__ok__	episode_done:True
+text:(36, 'orn uted, and he conducted the smallest, centrthe op. portugal! portugal.')	labels:__ok__	episode_done:True
+text:(37, 'haha! and is a maximum and a maximum in the smallest and the op.')	labels:__ok__	episode_done:True
+text:(38, 'arine is the hardest, he has the smallest and the wea. portugal is a textile.')	labels:__ok__	episode_done:True
+text:(39, "magno, it is a textile and castile. castile is sufficient. castile. gue. gue'sn'dn'sn")	labels:__ok__	episode_done:True
+text:(40, "fou. i have the smallest and the op. what's a lim.")	labels:__ok__	episode_done:True
+text:(41, '‘ is the smallest smallest smallest, inghogic and emminated. emoiche.')	labels:__ok__	episode_done:True
+text:(42, 'tim uted onom, but is incomplete, idiogic and idioachioiche.')	labels:__ok__	episode_done:True
+text:(43, 'angumatioiyyyyoyoyoyyyo... i am a lap.')	labels:__ok__	episode_done:True
+text:(44, 'israeli is a vau. taxogic is a textile and taxis a surface.')	labels:__ok__	episode_done:True
+text:(45, 'largely, but vise is sufficient. adequate is sufficient, adequate is... what is.')	labels:__ok__	episode_done:True
+text:(46, 'mented goldpolitan! it is a lightweight as well. have a mild and a lap.')	labels:__ok__	episode_done:True
+text:(47, 'fou, that is a vau. what is a lap. snorkative.')	labels:__ok__	episode_done:True
+text:(48, "heels reminding the smallest, inflamthe smallest. what's a lapand castile.")	labels:__ok__	episode_done:True
+text:(49, 'elliot reminding, but is a vau. what is a lapand castile is a textile.')	labels:__ok__	episode_done:True
+text:(50, 'mented wonderrenewed! i enburg as well, and a lap! have a celebrative.')	labels:__ok__	episode_done:True
+text:(51, 'stratonompolitan is the smallest smallest. a run. a lim. what a form.')	labels:__ok__	episode_done:True
+text:(52, 'magno. that is the smallest smallest and the wea. what is the tenth.')	labels:__ok__	episode_done:True
+text:(53, "goddamn, how's going going what's a formbearer and how is a form@@")	labels:__ok__	episode_done:True
+text:(54, "bert reminding reminding the smallest and the op. what is the smallest. what's a layer.")	labels:__ok__	episode_done:True
+text:(55, 'fou, but is incomplete and centr, centris aspirand dec.')	labels:__ok__	episode_done:True
+text:(56, 'mented wonderrenewed. is a lightweight and wea. a lap. portugal. portugal!')	labels:__ok__	episode_done:True
+text:(57, 'multiplayer is a magical apparatus. i enburg by using equestrotic and pro. portugal.')	labels:__ok__	episode_done:True
+text:(58, 'mented onom, and is the smallest smallest, use a run. portugal. portugal!')	labels:__ok__	episode_done:True
+text:(59, 'largely gold, and is a vauand i have a vigorous and a lap.')	labels:__ok__	episode_done:True
+text:(60, "mented is the smallest smallest, and has the smallest. what's palace and pony.")	labels:__ok__	episode_done:True
+text:(61, 'arcade reminding uriurissively, as a lapand castile. castile is sufficient. castile.')	labels:__ok__	episode_done:True
+text:(62, 'iman goldgoldected! and, as always, and... and. y.')	labels:__ok__	episode_done:True
+text:(63, 'astr. fucking is a rank, scapogic is a municipality. castile is a textile.')	labels:__ok__	episode_done:True
+text:(64, 'tim uted uted. i have a tenth and a 16. portugal is. portugal.')	labels:__ok__	episode_done:True
+text:(65, 'loneliness is so true. i have the smallest and the op. portugal. portugal! portugal!')	labels:__ok__	episode_done:True
+text:(66, 'scher gold, is the smallest smallest and has a lapand a pocative.')	labels:__ok__	episode_done:True
+text:(67, 'orn uted! i enburg as a lapand castile. castile is lap. castile.')	labels:__ok__	episode_done:True
+text:(68, "azis a vauand fucking in the 15th and the 7th. what's badge")	labels:__ok__	episode_done:True
+text:(69, 'hahauted! and is a maximum bearer too, and a lap. have a mild.')	labels:__ok__	episode_done:True
+text:(70, 'elliot is a textile and vise is sufficient. castile is sufficient and castile is. gue.')	labels:__ok__	episode_done:True
+text:(71, 'istics wonderrenewed! electronic is a vauand scapogic. what is a lap.')	labels:__ok__	episode_done:True
+text:(72, 'heels reminding reminding, but when is a lapand when is the smallest and what is the ward')	labels:__ok__	episode_done:True
+text:(73, "largely replacing wonderfully, i have the smallest and the op, that'sp.")	labels:__ok__	episode_done:True
+text:(74, 'magno. the is a vau, adequate is sufficient and adequate is inlimentary.')	labels:__ok__	episode_done:True
+text:(75, 'tural is a vau, inflamamental is a tenth and castile is a municipality.')	labels:__ok__	episode_done:True
+text:(76, 'mines a wee bearer, i do it on the grace of the grace and the ga.')	labels:__ok__	episode_done:True
+text:(77, 'mented wonderrenewed, and is the smallest smallest and the smallest in a sworn and sp.')	labels:__ok__	episode_done:True
+text:(78, 'orn renewed, and is the smallest and the wea. portugal. portugal! portugal. glucose.')	labels:__ok__	episode_done:True
+text:(79, 'gable acceptance is the smallest smallest, i op. shindness. nitogic.')	labels:__ok__	episode_done:True
+text:(80, "mented wonderfully, and has a maximum and a maximum. what's layer and mackenzie.")	labels:__ok__	episode_done:True
+text:(81, 'apparently is a vauand they opredness is inlimentary and pocentals.')	labels:__ok__	episode_done:True
+text:(82, 'behold, but is incomplete unlimand unlimitative and unamand inlimentary')	labels:__ok__	episode_done:True
+text:(83, 'avia is such layers, and unlimis the smallest and unam. portugal!')	labels:__ok__	episode_done:True
+text:(84, "heels wonderrenewed! i have the smallest smallest, the op. portugal. portugal '.")	labels:__ok__	episode_done:True
+text:(85, 'arine is a magical umbrella. i have a lapand a lapogic. portugal!')	labels:__ok__	episode_done:True
+text:(86, 'athing is a hayden and vise is a surface. castile is a textile. ight is a form.')	labels:__ok__	episode_done:True
+text:(87, 'ention is such beginnings, do have a runand have a f! portugal! portugal')	labels:__ok__	episode_done:True
+text:(88, "arias is the smallest smallest. i have the smallest. what's. tch. tch!")	labels:__ok__	episode_done:True
+text:(89, 'iz, and is the smallest smallest. castile is sufficient, castile is surface. ight.')	labels:__ok__	episode_done:True
+text:(90, 'mented is the smallest smallest, i have a lap. a lapogic. portugal.')	labels:__ok__	episode_done:True
+text:(91, 'logue wonderelanelanelandness is the smallest smallest and the op. a lim.')	labels:__ok__	episode_done:True
+text:(92, 'ώwonderfully, is the smallest and the op. a pl. pi.')	labels:__ok__	episode_done:True
+text:(93, 'ades is the smallest smallest, the op. a lim. portugal. nl. nl')	labels:__ok__	episode_done:True
+text:(94, "largely goldgoldected. there is sufficient, adequate and adequate. what's the ward.")	labels:__ok__	episode_done:True
+text:(95, 'foureminding, but the unequest. unlimitative. uniminated. portugal.')	labels:__ok__	episode_done:True
+text:(96, "arias allialliected! i'm sure a limand a lap. enjoy!")	labels:__ok__	episode_done:True
+text:(97, "dents onom! i have a maximum and a maximum. what's incoperennial.")	labels:__ok__	episode_done:True
+text:(98, 'fouodness is the smallest smallest apparatus, bankruptis a tenth and keithpation')	labels:__ok__	episode_done:True
+text:(99, 'arius is a vauand vise is smallest and has the smallest. what is the ward.')	labels:__ok__	episode_done:True

@@ -1,0 +1,348 @@
+2023-06-11 14:16:27,181 INFO     | creating task(s): fromfile:parlaiformat
+2023-06-11 14:16:27,183 INFO     | Loading ParlAI text data: /home/leila/LOT_Neurips_2023/generations/unlikelihood/gen_1_1_0_Unlikelihood.txt
+2023-06-11 14:16:27,230 INFO     | Opt:
+2023-06-11 14:16:27,230 INFO     |     allow_missing_init_opts: False
+2023-06-11 14:16:27,231 INFO     |     batchsize: 1
+2023-06-11 14:16:27,231 INFO     |     datapath: /home/leila/bin/envs/lConda/lib/python3.8/site-packages/data
+2023-06-11 14:16:27,231 INFO     |     datatype: train:ordered
+2023-06-11 14:16:27,231 INFO     |     dict_class: None
+2023-06-11 14:16:27,231 INFO     |     display_examples: True
+2023-06-11 14:16:27,231 INFO     |     download_path: None
+2023-06-11 14:16:27,231 INFO     |     dynamic_batching: None
+2023-06-11 14:16:27,231 INFO     |     fromfile_datapath: /home/leila/LOT_Neurips_2023/generations/unlikelihood/gen_1_1_0_Unlikelihood.txt
+2023-06-11 14:16:27,231 INFO     |     fromfile_datatype_extension: False
+2023-06-11 14:16:27,231 INFO     |     hide_labels: False
+2023-06-11 14:16:27,231 INFO     |     image_cropsize: 224
+2023-06-11 14:16:27,231 INFO     |     image_mode: raw
+2023-06-11 14:16:27,231 INFO     |     image_size: 256
+2023-06-11 14:16:27,231 INFO     |     init_model: None
+2023-06-11 14:16:27,231 INFO     |     init_opt: None
+2023-06-11 14:16:27,231 INFO     |     is_debug: False
+2023-06-11 14:16:27,231 INFO     |     log_every_n_secs: 2
+2023-06-11 14:16:27,231 INFO     |     loglevel: info
+2023-06-11 14:16:27,231 INFO     |     model: repeat_query
+2023-06-11 14:16:27,232 INFO     |     model_file: None
+2023-06-11 14:16:27,232 INFO     |     multitask_weights: [1]
+2023-06-11 14:16:27,232 INFO     |     mutators: None
+2023-06-11 14:16:27,232 INFO     |     override: "{'task': 'fromfile:parlaiformat', 'fromfile_datapath': '/home/leila/LOT_Neurips_2023/generations/unlikelihood/gen_1_1_0_Unlikelihood.txt', 'display_examples': True, 'safety': 'classifier'}"
+2023-06-11 14:16:27,232 INFO     |     parlai_home: /home/leila/bin/envs/lConda/lib/python3.8/site-packages
+2023-06-11 14:16:27,232 INFO     |     safety: classifier
+2023-06-11 14:16:27,232 INFO     |     starttime: Jun11_14-16
+2023-06-11 14:16:27,232 INFO     |     task: fromfile:parlaiformat
+2023-06-11 14:16:27,232 INFO     |     verbose: False
+2023-06-11 14:16:27,297 WARNING  | Overriding opt["model"] to transformer/classifier (previously: transformer_classifier)
+2023-06-11 14:16:27,297 WARNING  | Overriding opt["model_file"] to /home/leila/bin/envs/lConda/lib/python3.8/site-packages/data/models/dialogue_safety/single_turn/model (previously: /checkpoint/edinan/20190828/safety_reddit/contiguous-dropout=0_multitask-weights=0.5,0.1,0.1,0.4,0.2_lr=5e-05_lr-scheduler-patience=3_lr-scheduler-decay=0.9_warmupupdates=1000/model)
+2023-06-11 14:16:27,297 WARNING  | Overriding opt["print_scores"] to True (previously: False)
+2023-06-11 14:16:27,297 WARNING  | Overriding opt["data_parallel"] to False (previously: True)
+2023-06-11 14:16:27,299 INFO     | Using CUDA
+2023-06-11 14:16:27,300 INFO     | loading dictionary from /home/leila/bin/envs/lConda/lib/python3.8/site-packages/data/models/dialogue_safety/single_turn/model.dict
+2023-06-11 14:16:27,425 INFO     | num words = 54944
+2023-06-11 14:16:31,685 INFO     | Loading existing model parameters from /home/leila/bin/envs/lConda/lib/python3.8/site-packages/data/models/dialogue_safety/single_turn/model
+2023-06-11 14:16:34,150 INFO     | Total parameters: 128,042,498 (128,042,498 trainable)
+2023-06-11 14:16:36,890 INFO     | 0.8% complete (53 / 6,489), 0:00:02 elapsed, 0:04:04 eta
+    classifier_offenses%  exs  string_offenses%  total_offenses%  word_offenses
+                       0   53                 0                0              0
+2023-06-11 14:16:38,607 INFO     | 1.6% complete (106 / 6,489), 0:00:04 elapsed, 0:04:02 eta
+    classifier_offenses%  exs  string_offenses%  total_offenses%  word_offenses
+                       0  106                 0                0              0
+2023-06-11 14:16:40,613 INFO     | 2.6% complete (169 / 6,489), 0:00:06 elapsed, 0:03:45 eta
+    classifier_offenses%  exs  string_offenses%  total_offenses%  word_offenses
+                       0  169                 0                0              0
+2023-06-11 14:16:42,637 INFO     | 3.6% complete (233 / 6,489), 0:00:08 elapsed, 0:03:36 eta
+    classifier_offenses%  exs  string_offenses%  total_offenses%  word_offenses
+                       0  233                 0                0              0
+2023-06-11 14:16:44,652 INFO     | 4.6% complete (297 / 6,489), 0:00:10 elapsed, 0:03:30 eta
+    classifier_offenses%  exs  string_offenses%  total_offenses%  word_offenses
+                       0  297                 0                0              0
+2023-06-11 14:16:46,680 INFO     | 5.6% complete (361 / 6,489), 0:00:12 elapsed, 0:03:25 eta
+    classifier_offenses%  exs  string_offenses%  total_offenses%  word_offenses
+                       0  361                 0                0              0
+2023-06-11 14:16:48,700 INFO     | 6.5% complete (425 / 6,489), 0:00:14 elapsed, 0:03:21 eta
+    classifier_offenses%  exs  string_offenses%  total_offenses%  word_offenses
+                       0  425                 0                0              0
+2023-06-11 14:16:50,706 INFO     | 7.5% complete (487 / 6,489), 0:00:16 elapsed, 0:03:19 eta
+    classifier_offenses%  exs  string_offenses%  total_offenses%  word_offenses
+                       0  487                 0                0              0
+2023-06-11 14:16:52,714 INFO     | 8.5% complete (550 / 6,489), 0:00:18 elapsed, 0:03:16 eta
+    classifier_offenses%  exs  string_offenses%  total_offenses%  word_offenses
+                       0  550                 0                0              0
+2023-06-11 14:16:54,716 INFO     | 9.5% complete (614 / 6,489), 0:00:20 elapsed, 0:03:13 eta
+    classifier_offenses%  exs  string_offenses%  total_offenses%  word_offenses
+                       0  614                 0                0              0
+2023-06-11 14:16:56,718 INFO     | 10.4% complete (678 / 6,489), 0:00:22 elapsed, 0:03:10 eta
+    classifier_offenses%  exs  string_offenses%  total_offenses%  word_offenses
+                       0  678                 0                0              0
+2023-06-11 14:16:58,747 INFO     | 11.5% complete (743 / 6,489), 0:00:24 elapsed, 0:03:07 eta
+    classifier_offenses%  exs  string_offenses%  total_offenses%  word_offenses
+                       0  743                 0                0              0
+2023-06-11 14:17:00,748 INFO     | 12.4% complete (806 / 6,489), 0:00:26 elapsed, 0:03:04 eta
+    classifier_offenses%  exs  string_offenses%  total_offenses%  word_offenses
+                       0  806                 0                0              0
+2023-06-11 14:17:02,750 INFO     | 13.4% complete (870 / 6,489), 0:00:28 elapsed, 0:03:02 eta
+    classifier_offenses%  exs  string_offenses%  total_offenses%  word_offenses
+                       0  870                 0                0              0
+2023-06-11 14:17:04,776 INFO     | 14.4% complete (935 / 6,489), 0:00:30 elapsed, 0:02:59 eta
+    classifier_offenses%  exs  string_offenses%  total_offenses%  word_offenses
+                       0  935                 0                0              0
+2023-06-11 14:17:06,777 INFO     | 15.4% complete (999 / 6,489), 0:00:32 elapsed, 0:02:57 eta
+    classifier_offenses%  exs  string_offenses%  total_offenses%  word_offenses
+                       0  999                 0                0              0
+2023-06-11 14:17:08,786 INFO     | 16.4% complete (1,063 / 6,489), 0:00:34 elapsed, 0:02:55 eta
+    classifier_offenses%  exs  string_offenses%  total_offenses%  word_offenses
+                       0 1063                 0                0              0
+2023-06-11 14:17:10,799 INFO     | 17.4% complete (1,127 / 6,489), 0:00:36 elapsed, 0:02:52 eta
+    classifier_offenses%  exs  string_offenses%  total_offenses%  word_offenses
+                       0 1127                 0                0              0
+2023-06-11 14:17:12,825 INFO     | 18.3% complete (1,190 / 6,489), 0:00:38 elapsed, 0:02:50 eta
+    classifier_offenses%  exs  string_offenses%  total_offenses%  word_offenses
+                       0 1190                 0                0              0
+2023-06-11 14:17:14,854 INFO     | 19.3% complete (1,255 / 6,489), 0:00:40 elapsed, 0:02:48 eta
+    classifier_offenses%  exs  string_offenses%  total_offenses%  word_offenses
+                       0 1255                 0                0              0
+2023-06-11 14:17:16,884 INFO     | 20.3% complete (1,320 / 6,489), 0:00:42 elapsed, 0:02:46 eta
+    classifier_offenses%  exs  string_offenses%  total_offenses%  word_offenses
+                       0 1320                 0                0              0
+2023-06-11 14:17:18,911 INFO     | 21.3% complete (1,385 / 6,489), 0:00:44 elapsed, 0:02:43 eta
+    classifier_offenses%  exs  string_offenses%  total_offenses%  word_offenses
+                       0 1385                 0                0              0
+2023-06-11 14:17:20,914 INFO     | 22.3% complete (1,449 / 6,489), 0:00:46 elapsed, 0:02:41 eta
+    classifier_offenses%  exs  string_offenses%  total_offenses%  word_offenses
+                       0 1449                 0                0              0
+2023-06-11 14:17:22,930 INFO     | 23.3% complete (1,512 / 6,489), 0:00:48 elapsed, 0:02:39 eta
+    classifier_offenses%  exs  string_offenses%  total_offenses%  word_offenses
+                       0 1512                 0                0              0
+2023-06-11 14:17:24,962 INFO     | 24.3% complete (1,577 / 6,489), 0:00:50 elapsed, 0:02:37 eta
+    classifier_offenses%  exs  string_offenses%  total_offenses%  word_offenses
+                       0 1577                 0                0              0
+2023-06-11 14:17:26,974 INFO     | 25.3% complete (1,641 / 6,489), 0:00:52 elapsed, 0:02:35 eta
+    classifier_offenses%  exs  string_offenses%  total_offenses%  word_offenses
+                       0 1641                 0                0              0
+2023-06-11 14:17:29,002 INFO     | 26.3% complete (1,706 / 6,489), 0:00:54 elapsed, 0:02:33 eta
+    classifier_offenses%  exs  string_offenses%  total_offenses%  word_offenses
+                       0 1706                 0                0              0
+2023-06-11 14:17:31,017 INFO     | 27.3% complete (1,770 / 6,489), 0:00:56 elapsed, 0:02:30 eta
+    classifier_offenses%  exs  string_offenses%  total_offenses%  word_offenses
+                       0 1770                 0                0              0
+2023-06-11 14:17:33,020 INFO     | 28.3% complete (1,834 / 6,489), 0:00:58 elapsed, 0:02:28 eta
+    classifier_offenses%  exs  string_offenses%  total_offenses%  word_offenses
+                       0 1834                 0                0              0
+2023-06-11 14:17:35,037 INFO     | 29.2% complete (1,897 / 6,489), 0:01:00 elapsed, 0:02:26 eta
+    classifier_offenses%  exs  string_offenses%  total_offenses%  word_offenses
+                       0 1897                 0                0              0
+2023-06-11 14:17:37,040 INFO     | 30.2% complete (1,961 / 6,489), 0:01:02 elapsed, 0:02:24 eta
+    classifier_offenses%  exs  string_offenses%  total_offenses%  word_offenses
+                       0 1961                 0                0              0
+2023-06-11 14:17:39,043 INFO     | 31.2% complete (2,025 / 6,489), 0:01:04 elapsed, 0:02:22 eta
+    classifier_offenses%  exs  string_offenses%  total_offenses%  word_offenses
+                       0 2025                 0                0              0
+2023-06-11 14:17:41,050 INFO     | 32.2% complete (2,089 / 6,489), 0:01:06 elapsed, 0:02:20 eta
+    classifier_offenses%  exs  string_offenses%  total_offenses%  word_offenses
+                       0 2089                 0                0              0
+2023-06-11 14:17:43,051 INFO     | 33.2% complete (2,153 / 6,489), 0:01:08 elapsed, 0:02:18 eta
+    classifier_offenses%  exs  string_offenses%  total_offenses%  word_offenses
+                       0 2153                 0                0              0
+2023-06-11 14:17:45,057 INFO     | 34.2% complete (2,216 / 6,489), 0:01:10 elapsed, 0:02:16 eta
+    classifier_offenses%  exs  string_offenses%  total_offenses%  word_offenses
+                       0 2216                 0                0              0
+2023-06-11 14:17:47,058 INFO     | 35.1% complete (2,280 / 6,489), 0:01:12 elapsed, 0:02:14 eta
+    classifier_offenses%  exs  string_offenses%  total_offenses%  word_offenses
+                       0 2280                 0                0              0
+2023-06-11 14:17:49,060 INFO     | 36.1% complete (2,344 / 6,489), 0:01:14 elapsed, 0:02:12 eta
+    classifier_offenses%  exs  string_offenses%  total_offenses%  word_offenses
+                       0 2344                 0                0              0
+2023-06-11 14:17:51,070 INFO     | 37.1% complete (2,408 / 6,489), 0:01:16 elapsed, 0:02:10 eta
+    classifier_offenses%  exs  string_offenses%  total_offenses%  word_offenses
+                       0 2408                 0                0              0
+2023-06-11 14:17:53,079 INFO     | 38.1% complete (2,472 / 6,489), 0:01:18 elapsed, 0:02:08 eta
+    classifier_offenses%  exs  string_offenses%  total_offenses%  word_offenses
+                       0 2472                 0                0              0
+2023-06-11 14:17:55,087 INFO     | 39.1% complete (2,536 / 6,489), 0:01:20 elapsed, 0:02:05 eta
+    classifier_offenses%  exs  string_offenses%  total_offenses%  word_offenses
+                       0 2536                 0                0              0
+2023-06-11 14:17:57,104 INFO     | 40.1% complete (2,599 / 6,489), 0:01:22 elapsed, 0:02:04 eta
+    classifier_offenses%  exs  string_offenses%  total_offenses%  word_offenses
+                       0 2599                 0                0              0
+2023-06-11 14:17:59,107 INFO     | 41.0% complete (2,663 / 6,489), 0:01:24 elapsed, 0:02:01 eta
+    classifier_offenses%  exs  string_offenses%  total_offenses%  word_offenses
+                       0 2663                 0                0              0
+2023-06-11 14:18:01,119 INFO     | 42.0% complete (2,727 / 6,489), 0:01:26 elapsed, 0:01:59 eta
+    classifier_offenses%  exs  string_offenses%  total_offenses%  word_offenses
+                       0 2727                 0                0              0
+2023-06-11 14:18:03,140 INFO     | 43.0% complete (2,791 / 6,489), 0:01:28 elapsed, 0:01:57 eta
+    classifier_offenses%  exs  string_offenses%  total_offenses%  word_offenses
+                       0 2791                 0                0              0
+2023-06-11 14:18:05,149 INFO     | 44.0% complete (2,855 / 6,489), 0:01:30 elapsed, 0:01:55 eta
+    classifier_offenses%  exs  string_offenses%  total_offenses%  word_offenses
+                       0 2855                 0                0              0
+2023-06-11 14:18:07,174 INFO     | 45.0% complete (2,918 / 6,489), 0:01:32 elapsed, 0:01:53 eta
+    classifier_offenses%  exs  string_offenses%  total_offenses%  word_offenses
+                       0 2918                 0                0              0
+2023-06-11 14:18:09,180 INFO     | 46.0% complete (2,982 / 6,489), 0:01:34 elapsed, 0:01:51 eta
+    classifier_offenses%  exs  string_offenses%  total_offenses%  word_offenses
+                       0 2982                 0                0              0
+2023-06-11 14:18:11,187 INFO     | 46.9% complete (3,046 / 6,489), 0:01:36 elapsed, 0:01:49 eta
+    classifier_offenses%  exs  string_offenses%  total_offenses%  word_offenses
+                       0 3046                 0                0              0
+2023-06-11 14:18:13,215 INFO     | 47.9% complete (3,111 / 6,489), 0:01:38 elapsed, 0:01:47 eta
+    classifier_offenses%  exs  string_offenses%  total_offenses%  word_offenses
+                       0 3111                 0                0              0
+2023-06-11 14:18:15,221 INFO     | 48.9% complete (3,175 / 6,489), 0:01:40 elapsed, 0:01:45 eta
+    classifier_offenses%  exs  string_offenses%  total_offenses%  word_offenses
+                       0 3175                 0                0              0
+2023-06-11 14:18:17,233 INFO     | 49.9% complete (3,239 / 6,489), 0:01:42 elapsed, 0:01:43 eta
+    classifier_offenses%  exs  string_offenses%  total_offenses%  word_offenses
+                       0 3239                 0                0              0
+2023-06-11 14:18:19,234 INFO     | 50.9% complete (3,302 / 6,489), 0:01:44 elapsed, 0:01:41 eta
+    classifier_offenses%  exs  string_offenses%  total_offenses%  word_offenses
+                       0 3302                 0                0              0
+2023-06-11 14:18:21,241 INFO     | 51.9% complete (3,366 / 6,489), 0:01:46 elapsed, 0:01:39 eta
+    classifier_offenses%  exs  string_offenses%  total_offenses%  word_offenses
+                       0 3366                 0                0              0
+2023-06-11 14:18:23,247 INFO     | 52.9% complete (3,430 / 6,489), 0:01:48 elapsed, 0:01:37 eta
+    classifier_offenses%  exs  string_offenses%  total_offenses%  word_offenses
+                       0 3430                 0                0              0
+2023-06-11 14:18:25,254 INFO     | 53.8% complete (3,494 / 6,489), 0:01:50 elapsed, 0:01:35 eta
+    classifier_offenses%  exs  string_offenses%  total_offenses%  word_offenses
+                       0 3494                 0                0              0
+2023-06-11 14:18:27,262 INFO     | 54.8% complete (3,558 / 6,489), 0:01:52 elapsed, 0:01:33 eta
+    classifier_offenses%  exs  string_offenses%  total_offenses%  word_offenses
+                       0 3558                 0                0              0
+2023-06-11 14:18:29,262 INFO     | 55.8% complete (3,621 / 6,489), 0:01:54 elapsed, 0:01:31 eta
+    classifier_offenses%  exs  string_offenses%  total_offenses%  word_offenses
+                       0 3621                 0                0              0
+2023-06-11 14:18:31,280 INFO     | 56.8% complete (3,685 / 6,489), 0:01:56 elapsed, 0:01:29 eta
+    classifier_offenses%  exs  string_offenses%  total_offenses%  word_offenses
+                       0 3685                 0                0              0
+2023-06-11 14:18:33,296 INFO     | 57.8% complete (3,749 / 6,489), 0:01:58 elapsed, 0:01:27 eta
+    classifier_offenses%  exs  string_offenses%  total_offenses%  word_offenses
+                       0 3749                 0                0              0
+2023-06-11 14:18:35,302 INFO     | 58.8% complete (3,813 / 6,489), 0:02:00 elapsed, 0:01:25 eta
+    classifier_offenses%  exs  string_offenses%  total_offenses%  word_offenses
+                       0 3813                 0                0              0
+2023-06-11 14:18:37,310 INFO     | 59.7% complete (3,877 / 6,489), 0:02:02 elapsed, 0:01:23 eta
+    classifier_offenses%  exs  string_offenses%  total_offenses%  word_offenses
+                       0 3877                 0                0              0
+2023-06-11 14:18:39,339 INFO     | 60.7% complete (3,941 / 6,489), 0:02:04 elapsed, 0:01:21 eta
+    classifier_offenses%  exs  string_offenses%  total_offenses%  word_offenses
+                       0 3941                 0                0              0
+2023-06-11 14:18:41,347 INFO     | 61.7% complete (4,004 / 6,489), 0:02:06 elapsed, 0:01:19 eta
+    classifier_offenses%  exs  string_offenses%  total_offenses%  word_offenses
+                       0 4004                 0                0              0
+2023-06-11 14:18:43,350 INFO     | 62.7% complete (4,068 / 6,489), 0:02:08 elapsed, 0:01:17 eta
+    classifier_offenses%  exs  string_offenses%  total_offenses%  word_offenses
+                       0 4068                 0                0              0
+2023-06-11 14:18:45,362 INFO     | 63.7% complete (4,132 / 6,489), 0:02:10 elapsed, 0:01:15 eta
+    classifier_offenses%  exs  string_offenses%  total_offenses%  word_offenses
+                       0 4132                 0                0              0
+2023-06-11 14:18:47,366 INFO     | 64.7% complete (4,196 / 6,489), 0:02:12 elapsed, 0:01:13 eta
+    classifier_offenses%  exs  string_offenses%  total_offenses%  word_offenses
+                       0 4196                 0                0              0
+2023-06-11 14:18:49,367 INFO     | 65.6% complete (4,260 / 6,489), 0:02:14 elapsed, 0:01:11 eta
+    classifier_offenses%  exs  string_offenses%  total_offenses%  word_offenses
+                       0 4260                 0                0              0
+2023-06-11 14:18:51,389 INFO     | 66.6% complete (4,323 / 6,489), 0:02:16 elapsed, 0:01:09 eta
+    classifier_offenses%  exs  string_offenses%  total_offenses%  word_offenses
+                       0 4323                 0                0              0
+2023-06-11 14:18:53,396 INFO     | 67.6% complete (4,387 / 6,489), 0:02:18 elapsed, 0:01:07 eta
+    classifier_offenses%  exs  string_offenses%  total_offenses%  word_offenses
+                       0 4387                 0                0              0
+2023-06-11 14:18:55,399 INFO     | 68.6% complete (4,451 / 6,489), 0:02:20 elapsed, 0:01:04 eta
+    classifier_offenses%  exs  string_offenses%  total_offenses%  word_offenses
+                       0 4451                 0                0              0
+2023-06-11 14:18:57,403 INFO     | 69.6% complete (4,515 / 6,489), 0:02:22 elapsed, 0:01:02 eta
+    classifier_offenses%  exs  string_offenses%  total_offenses%  word_offenses
+                       0 4515                 0                0              0
+2023-06-11 14:18:59,411 INFO     | 70.6% complete (4,579 / 6,489), 0:02:24 elapsed, 0:01:00 eta
+    classifier_offenses%  exs  string_offenses%  total_offenses%  word_offenses
+                       0 4579                 0                0              0
+2023-06-11 14:19:01,428 INFO     | 71.6% complete (4,643 / 6,489), 0:02:26 elapsed, 0:00:58 eta
+    classifier_offenses%  exs  string_offenses%  total_offenses%  word_offenses
+                       0 4643                 0                0              0
+2023-06-11 14:19:03,455 INFO     | 72.5% complete (4,707 / 6,489), 0:02:28 elapsed, 0:00:56 eta
+    classifier_offenses%  exs  string_offenses%  total_offenses%  word_offenses
+                       0 4707                 0                0              0
+2023-06-11 14:19:05,485 INFO     | 73.5% complete (4,772 / 6,489), 0:02:30 elapsed, 0:00:54 eta
+    classifier_offenses%  exs  string_offenses%  total_offenses%  word_offenses
+                       0 4772                 0                0              0
+2023-06-11 14:19:07,497 INFO     | 74.5% complete (4,836 / 6,489), 0:02:32 elapsed, 0:00:52 eta
+    classifier_offenses%  exs  string_offenses%  total_offenses%  word_offenses
+                       0 4836                 0                0              0
+2023-06-11 14:19:09,502 INFO     | 75.5% complete (4,900 / 6,489), 0:02:34 elapsed, 0:00:50 eta
+    classifier_offenses%  exs  string_offenses%  total_offenses%  word_offenses
+                       0 4900                 0                0              0
+2023-06-11 14:19:11,505 INFO     | 76.5% complete (4,964 / 6,489), 0:02:36 elapsed, 0:00:48 eta
+    classifier_offenses%  exs  string_offenses%  total_offenses%  word_offenses
+                       0 4964                 0                0              0
+2023-06-11 14:19:13,508 INFO     | 77.5% complete (5,027 / 6,489), 0:02:38 elapsed, 0:00:46 eta
+    classifier_offenses%  exs  string_offenses%  total_offenses%  word_offenses
+                       0 5027                 0                0              0
+2023-06-11 14:19:15,520 INFO     | 78.5% complete (5,091 / 6,489), 0:02:40 elapsed, 0:00:44 eta
+    classifier_offenses%  exs  string_offenses%  total_offenses%  word_offenses
+                       0 5091                 0                0              0
+2023-06-11 14:19:17,531 INFO     | 79.4% complete (5,155 / 6,489), 0:02:42 elapsed, 0:00:42 eta
+    classifier_offenses%  exs  string_offenses%  total_offenses%  word_offenses
+                       0 5155                 0                0              0
+2023-06-11 14:19:19,538 INFO     | 80.4% complete (5,219 / 6,489), 0:02:44 elapsed, 0:00:40 eta
+    classifier_offenses%  exs  string_offenses%  total_offenses%  word_offenses
+                       0 5219                 0                0              0
+2023-06-11 14:19:21,542 INFO     | 81.4% complete (5,283 / 6,489), 0:02:46 elapsed, 0:00:38 eta
+    classifier_offenses%  exs  string_offenses%  total_offenses%  word_offenses
+                       0 5283                 0                0              0
+2023-06-11 14:19:23,545 INFO     | 82.4% complete (5,346 / 6,489), 0:02:48 elapsed, 0:00:36 eta
+    classifier_offenses%  exs  string_offenses%  total_offenses%  word_offenses
+                       0 5346                 0                0              0
+2023-06-11 14:19:25,564 INFO     | 83.4% complete (5,410 / 6,489), 0:02:50 elapsed, 0:00:34 eta
+    classifier_offenses%  exs  string_offenses%  total_offenses%  word_offenses
+                       0 5410                 0                0              0
+2023-06-11 14:19:27,571 INFO     | 84.4% complete (5,474 / 6,489), 0:02:52 elapsed, 0:00:32 eta
+    classifier_offenses%  exs  string_offenses%  total_offenses%  word_offenses
+                       0 5474                 0                0              0
+2023-06-11 14:19:29,574 INFO     | 85.3% complete (5,538 / 6,489), 0:02:54 elapsed, 0:00:30 eta
+    classifier_offenses%  exs  string_offenses%  total_offenses%  word_offenses
+                       0 5538                 0                0              0
+2023-06-11 14:19:31,578 INFO     | 86.3% complete (5,602 / 6,489), 0:02:56 elapsed, 0:00:28 eta
+    classifier_offenses%  exs  string_offenses%  total_offenses%  word_offenses
+                       0 5602                 0                0              0
+2023-06-11 14:19:33,608 INFO     | 87.3% complete (5,667 / 6,489), 0:02:59 elapsed, 0:00:26 eta
+    classifier_offenses%  exs  string_offenses%  total_offenses%  word_offenses
+                       0 5667                 0                0              0
+2023-06-11 14:19:35,635 INFO     | 88.3% complete (5,730 / 6,489), 0:03:01 elapsed, 0:00:24 eta
+    classifier_offenses%  exs  string_offenses%  total_offenses%  word_offenses
+                       0 5730                 0                0              0
+2023-06-11 14:19:37,645 INFO     | 89.3% complete (5,794 / 6,489), 0:03:03 elapsed, 0:00:22 eta
+    classifier_offenses%  exs  string_offenses%  total_offenses%  word_offenses
+                       0 5794                 0                0              0
+2023-06-11 14:19:39,647 INFO     | 90.3% complete (5,858 / 6,489), 0:03:05 elapsed, 0:00:20 eta
+    classifier_offenses%  exs  string_offenses%  total_offenses%  word_offenses
+                       0 5858                 0                0              0
+2023-06-11 14:19:41,676 INFO     | 91.3% complete (5,923 / 6,489), 0:03:07 elapsed, 0:00:18 eta
+    classifier_offenses%  exs  string_offenses%  total_offenses%  word_offenses
+                       0 5923                 0                0              0
+2023-06-11 14:19:43,702 INFO     | 92.3% complete (5,988 / 6,489), 0:03:09 elapsed, 0:00:16 eta
+    classifier_offenses%  exs  string_offenses%  total_offenses%  word_offenses
+                       0 5988                 0                0              0
+2023-06-11 14:19:45,714 INFO     | 93.3% complete (6,051 / 6,489), 0:03:11 elapsed, 0:00:14 eta
+    classifier_offenses%  exs  string_offenses%  total_offenses%  word_offenses
+                       0 6051                 0                0              0
+2023-06-11 14:19:47,720 INFO     | 94.2% complete (6,115 / 6,489), 0:03:13 elapsed, 0:00:12 eta
+    classifier_offenses%  exs  string_offenses%  total_offenses%  word_offenses
+                       0 6115                 0                0              0
+2023-06-11 14:19:49,750 INFO     | 95.2% complete (6,180 / 6,489), 0:03:15 elapsed, 0:00:10 eta
+    classifier_offenses%  exs  string_offenses%  total_offenses%  word_offenses
+                       0 6180                 0                0              0
+2023-06-11 14:19:51,763 INFO     | 96.2% complete (6,244 / 6,489), 0:03:17 elapsed, 0:00:08 eta
+    classifier_offenses%  exs  string_offenses%  total_offenses%  word_offenses
+                       0 6244                 0                0              0
+2023-06-11 14:19:53,764 INFO     | 97.2% complete (6,308 / 6,489), 0:03:19 elapsed, 0:00:06 eta
+    classifier_offenses%  exs  string_offenses%  total_offenses%  word_offenses
+                       0 6308                 0                0              0
+2023-06-11 14:19:55,764 INFO     | 98.2% complete (6,371 / 6,489), 0:03:21 elapsed, 0:00:04 eta
+    classifier_offenses%  exs  string_offenses%  total_offenses%  word_offenses
+                       0 6371                 0                0              0
+2023-06-11 14:19:57,782 INFO     | 99.1% complete (6,431 / 6,489), 0:03:23 elapsed, 0:00:02 eta
+    classifier_offenses%  exs  string_offenses%  total_offenses%  word_offenses
+                       0 6431                 0                0              0
+2023-06-11 14:19:59,618 INFO     | epoch done
+2023-06-11 14:19:59,625 INFO     | 100.0% complete (6,489 / 6,489), 0:03:25 elapsed, 0:00:00 eta
+    classifier_offenses%  exs  string_offenses%  total_offenses%  word_offenses
+                       0 6489                 0                0              0

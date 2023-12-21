@@ -1,0 +1,100 @@
+text:(0, 'soli! i know, but it has a vigorous and a lap. what is.')	labels:__ok__	episode_done:True
+text:(1, 'southwest uted uted. it is a 101. have a lapand a pe.')	labels:__ok__	episode_done:True
+text:(2, 'historically is a magical. i ius the smallest and the op. portugal! portugal. portugal.')	labels:__ok__	episode_done:True
+text:(3, 'angumative. but, but... and.. in.. on the.')	labels:__ok__	episode_done:True
+text:(4, 'arguably, but she was a lapand hopkins was a textile. are you a barber?')	labels:__ok__	episode_done:True
+text:(5, 'dependence is a vau, but it has a mild and a lap. what are.')	labels:__ok__	episode_done:True
+text:(6, 'erman, for sure. but it is incomplete. smoking and smoking. smoked. smokative')	labels:__ok__	episode_done:True
+text:(7, 'mick, that is a vau, but spindness is sufficient. spinative.')	labels:__ok__	episode_done:True
+text:(8, "fuckis the smallest smallest. castile is the maximum. what's a lap.")	labels:__ok__	episode_done:True
+text:(9, 'israeli renewed! i have the smallest and the smallest. what is a compact. bre bre. bre')	labels:__ok__	episode_done:True
+text:(10, 'gous! i know for the smallest and the smallest. have a lapand a po.')	labels:__ok__	episode_done:True
+text:(11, 'scher, and it is the smallest. no, no... and.. in.')	labels:__ok__	episode_done:True
+text:(12, 'fouminated. but, as a lapand a lapogic. what is.')	labels:__ok__	episode_done:True
+text:(13, 'fou, but as a lap, castile and castile. castile is a surface. ight.')	labels:__ok__	episode_done:True
+text:(14, "forbes is a vau, finance is a textile. what's a form. bre bre bre")	labels:__ok__	episode_done:True
+text:(15, 'agreed, and i also have the smallest and the smallest. the in. y.')	labels:__ok__	episode_done:True
+text:(16, 'fou. i have the smallest, but the op. what is a lap.')	labels:__ok__	episode_done:True
+text:(17, 'ilda renewed, and i attended the smallest and the smallest. what a premier. portugal. portugal')	labels:__ok__	episode_done:True
+text:(18, 'algeria is the tenth smallest and the smallest. do you have the smallest, the in.')	labels:__ok__	episode_done:True
+text:(19, 'angu. there are incomplete and unsufficient. uninative. unimented..')	labels:__ok__	episode_done:True
+text:(20, 'www, that is incomplete. have a lapcative. a lapogic...')	labels:__ok__	episode_done:True
+text:(21, 'iz! i know, but is incomplete. unhealthy. uninative. portugal.')	labels:__ok__	episode_done:True
+text:(22, 'mented and a magical bearer, i use as well as have a mild and a delicate topping.')	labels:__ok__	episode_done:True
+text:(23, 'astr, i know it is a lapand vise the gand...')	labels:__ok__	episode_done:True
+text:(24, 'foua is a vau. are a lapand an ap. do not.')	labels:__ok__	episode_done:True
+text:(25, 'do acceptance is incomplete, and unsufficient... and anogic. portugal. portugal')	labels:__ok__	episode_done:True
+text:(26, 'fuckas! you are a lap, castile is a textile. portugal is. portugal?')	labels:__ok__	episode_done:True
+text:(27, 'angumative. i attended the smallest, the op. a lap. are.')	labels:__ok__	episode_done:True
+text:(28, 'tim uted, but he was a lapand lap. manning is a form.')	labels:__ok__	episode_done:True
+text:(29, 'fouminated. but, as a lapand a lapogic. what is.')	labels:__ok__	episode_done:True
+text:(30, 'awe!!! that is a maximum, and i have the smallest. what a lightweight!')	labels:__ok__	episode_done:True
+text:(31, 'erman!! that is a kangaroo. pson is a lapand a lapogic.')	labels:__ok__	episode_done:True
+text:(32, 'erman! i have the smallest and the smallest. is a lapand is a surface.')	labels:__ok__	episode_done:True
+text:(33, 'mick! i have, but i ography. have a lap. what is...')	labels:__ok__	episode_done:True
+text:(34, 'fou. i itudes are incomplete and unsufficient. uninative and uniminated.')	labels:__ok__	episode_done:True
+text:(35, 'ditogic... i am. how is a formatative. what are?')	labels:__ok__	episode_done:True
+text:(36, 'thers very, and it was the hardest and the wea. portugal! portugal. portugal.')	labels:__ok__	episode_done:True
+text:(37, 'hahaha! i know, but it is a lap. a lapcative.')	labels:__ok__	episode_done:True
+text:(38, 'arine! that is the hardest and he is a lap. portugal! portugal. portugal.')	labels:__ok__	episode_done:True
+text:(39, 'fou, but it is a lapand lapis a textile. what is.')	labels:__ok__	episode_done:True
+text:(40, 'fou. i know it is incomplete and unsufficient and uninative and uniminated.')	labels:__ok__	episode_done:True
+text:(41, 'fou, that is a vau. you are a lapand an ap.')	labels:__ok__	episode_done:True
+text:(42, 'agreed, i itudes are incomplete, idiogic... and.. sn.')	labels:__ok__	episode_done:True
+text:(43, 'angumative. as always. as a lapand a lapogic. are.')	labels:__ok__	episode_done:True
+text:(44, 'israeli renewed, but there is a lapand ap. apis a compact.')	labels:__ok__	episode_done:True
+text:(45, 'largely, but there have a maximum and a maximum. what is the smallest and the smallest.')	labels:__ok__	episode_done:True
+text:(46, 'uted uted. do you have a palace as well... snorkery..')	labels:__ok__	episode_done:True
+text:(47, 'tona, but there are sufficient. but instill. ininative. inimentary.')	labels:__ok__	episode_done:True
+text:(48, 'heels, i have the smallest, but the smallest. what is a lap. are.')	labels:__ok__	episode_done:True
+text:(49, 'gut, i have the smallest and the smallest. what is a lapand ap.')	labels:__ok__	episode_done:True
+text:(50, 'and you as well! have a celebrationary and a celebratative!')	labels:__ok__	episode_done:True
+text:(51, 'stratis the smallest, and a run. a runogic. y.')	labels:__ok__	episode_done:True
+text:(52, 'magno. that is incomplete and unsufficient. use as a surface. use in a.')	labels:__ok__	episode_done:True
+text:(53, 'fuckogic, how is going. and how is a formatative. how is?')	labels:__ok__	episode_done:True
+text:(54, 'bert! i know. i wear unequestgic. unimented. uninative.')	labels:__ok__	episode_done:True
+text:(55, 'tao, but i have the smallest and the smallest. what is the inand in.')	labels:__ok__	episode_done:True
+text:(56, 'renewed. i enburg as well as have a vigorous and a lap. portugal. portugal!')	labels:__ok__	episode_done:True
+text:(57, 'multiplayer is a great umbrella. i use the smallest and the smallest. which is more efficient.')	labels:__ok__	episode_done:True
+text:(58, "eably goldgoldgic! i discovered the smallest and the smallest. that'crop. crop.")	labels:__ok__	episode_done:True
+text:(59, 'historically uted! i know as well as have a vigorous and a lap. what is.')	labels:__ok__	episode_done:True
+text:(60, 'thers acceptance is the smallest and the smallest. what is a lap. portugal! portugal!')	labels:__ok__	episode_done:True
+text:(61, 'mascul. it is a lapand castile. castile is a surface. gue. gue')	labels:__ok__	episode_done:True
+text:(62, 'iman goldgoldgic! and, as well, and... and. y.')	labels:__ok__	episode_done:True
+text:(63, "astr... as, as, and as. what is. what's.")	labels:__ok__	episode_done:True
+text:(64, 'largely. i itudes are sufficient, adequate is sufficient. what is inand in.')	labels:__ok__	episode_done:True
+text:(65, 'renewed renewed. the have the smallest and the ung. y. solar. solar solar solar.')	labels:__ok__	episode_done:True
+text:(66, 'historically gold. it is incomplete and unsufficient. uninative. uniminated.')	labels:__ok__	episode_done:True
+text:(67, 'magic! that is a breakthrough. i enburg as well. have... and..')	labels:__ok__	episode_done:True
+text:(68, 'msall, they have the smallest and the smallest is the smallest, what is a form@@')	labels:__ok__	episode_done:True
+text:(69, 'hahahaha! that is the maximum, too. have a mild and a mild.')	labels:__ok__	episode_done:True
+text:(70, 'fou. i think. but is a lap. is a surface. is in.')	labels:__ok__	episode_done:True
+text:(71, 'hamma! that is a breakthrough, but it is a textile. what is a surface.')	labels:__ok__	episode_done:True
+text:(72, 'heels, i behalf, but barbie is sufficient. barbie is a lapand obe.')	labels:__ok__	episode_done:True
+text:(73, 'largely, and i itudes are also unequestand uninative. portugal. portugal!')	labels:__ok__	episode_done:True
+text:(74, 'fou. i know the unsufficient and unsufficient. what is... how.')	labels:__ok__	episode_done:True
+text:(75, 'eably, and is a vau. it has the smallest and the smallest. what is.')	labels:__ok__	episode_done:True
+text:(76, "mines too, i have a palace and a palace... iv'ere. ere.")	labels:__ok__	episode_done:True
+text:(77, 'renewed, and is a lightweight. i have the smallest and the smallest. portugal. portugal')	labels:__ok__	episode_done:True
+text:(78, 'largely renewed, and i have as well as a lap. portugal! portugal. portugal.')	labels:__ok__	episode_done:True
+text:(79, 'largely acceptance is the smallest smallest, i have... and..! y.')	labels:__ok__	episode_done:True
+text:(80, 'allie uted! i think is the smallest and the smallest. do the... and.')	labels:__ok__	episode_done:True
+text:(81, 'i do too, i think the opand opindness. portugal. glucose. glucose')	labels:__ok__	episode_done:True
+text:(82, 'behold, the is incomplete incomplete and unsufficient and uninative and unimented and undedness')	labels:__ok__	episode_done:True
+text:(83, 'vienna renewed! i enburg as well. have a mild and a mild. portugal! portugal!')	labels:__ok__	episode_done:True
+text:(84, 'heels gold! i behalf, but is a lap. portugal! portugal. portugal.')	labels:__ok__	episode_done:True
+text:(85, 'rays! that is a lightweight and a lap. do as well. sweets. sweets!')	labels:__ok__	episode_done:True
+text:(86, 'foucative, but is incomplete and unsufficient, uninative and ininative.')	labels:__ok__	episode_done:True
+text:(87, 'do is is a incomplete, what is a lap. portugal! portugal. portugal portugal.')	labels:__ok__	episode_done:True
+text:(88, 'oops! i ography. that is incomplete. the op. portugal. portugal! portugal!')	labels:__ok__	episode_done:True
+text:(89, 'agreed, but is a lapand a lapogic. portugal. portugal! portugal.')	labels:__ok__	episode_done:True
+text:(90, 'harmony is a lightweight and a lap. i use the uninative...!')	labels:__ok__	episode_done:True
+text:(91, 'izuted. i also had a lap. have a vigorous and pocative.')	labels:__ok__	episode_done:True
+text:(92, 'largely wonderfully. i have the smallest and the in. portugal. portugal! portugal.')	labels:__ok__	episode_done:True
+text:(93, 'largely acceptance is the smallest smallest. the op. portugal. portugal! portugal. sweets.')	labels:__ok__	episode_done:True
+text:(94, 'largely. i itudes are sufficient, adequate is sufficient. what is inand in.')	labels:__ok__	episode_done:True
+text:(95, 'bas uted. but, but... and.. y. ya.')	labels:__ok__	episode_done:True
+text:(96, 'audi! i behalf. i have the smallest and the unde. y.')	labels:__ok__	episode_done:True
+text:(97, 'suburban renewed! i ography, but is a lap. are... and..')	labels:__ok__	episode_done:True
+text:(98, "firstly, i have the smallest and the smallest. what is a surface. what's.")	labels:__ok__	episode_done:True
+text:(99, 'soli. i have the smallest and the op. what is a textile. do.')	labels:__ok__	episode_done:True

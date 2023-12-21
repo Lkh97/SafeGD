@@ -1,0 +1,100 @@
+text:(0, "arias is the smallest smallest, but has the smallest and the smallest. what's palace.")	labels:__ok__	episode_done:True
+text:(1, 'istics is the smallest smallest smallest. no, spand sp. spam.')	labels:__ok__	episode_done:True
+text:(2, 'tedly, and is a vigorous and adequate. castile is adequate and castile is...!')	labels:__ok__	episode_done:True
+text:(3, "angu. that's a vau. no, a lap. snorkative.")	labels:__ok__	episode_done:True
+text:(4, 'arguably, but she was a lapand hopkins was a run. belfast is lap.')	labels:__ok__	episode_done:True
+text:(5, 'bert gold, goldgoldachioissuissuissuoissuotophioooiooyoooyyyooellyyintoiiioiiyyiiintntttthttkttchttbtdd577755757877220571115112051202055157205@@')	labels:__ok__	episode_done:True
+text:(6, 'magnoossively. toto is a lap. toototototopiototopimtotoptoptopachiotoptopictotopotopimtoptopitoptopcolcolcoltoptopectoptophotoptophectoptophitoptophetoptophytoptopastoptopatoptopantoptopodotoptopamtoptopetoptopaptoptophtoptopeitoptophutoptoptopping')	labels:__ok__	episode_done:True
+text:(7, "istics, that's a vau. spinative is a lapand spinentary.")	labels:__ok__	episode_done:True
+text:(8, "astrodness is the smallest smallest. castile is the maximum. what's a maximum.")	labels:__ok__	episode_done:True
+text:(9, 'scoris a vau, voltais an equest. taxis the smallest.')	labels:__ok__	episode_done:True
+text:(10, 'scher is a magical apparatus and vise the smallest and the smallest in the smallest. learn the smallest!')	labels:__ok__	episode_done:True
+text:(11, 'scher is the smallest smallest, no is a lapand castile. castile is lap.')	labels:__ok__	episode_done:True
+text:(12, 'essex reminding the maximum, fucking op. a lap, a lapogic..')	labels:__ok__	episode_done:True
+text:(13, 'foua is a vau, fucking is surface. castile is surface and castile is..')	labels:__ok__	episode_done:True
+text:(14, 'forbes is a bronze, clench is a lap. castile is lapand castile is po@@')	labels:__ok__	episode_done:True
+text:(15, "orn renewed renewed the smallest smallest, nelthe smallest and unequestgic. what'sn't forma")	labels:__ok__	episode_done:True
+text:(16, 'mixcelandness is a sworn and unequest. unspis a surface.')	labels:__ok__	episode_done:True
+text:(17, "istics is a magical umbrella, i have a lapand a run, what's layer.")	labels:__ok__	episode_done:True
+text:(18, 'algeria is a textile textile textile intensive and scapoentary. 1, 1, 2, 5')	labels:__ok__	episode_done:True
+text:(19, 'angu. that is incomplete and unsufficient. uninative and uninentary. learn.')	labels:__ok__	episode_done:True
+text:(20, 'www, for the smallest, the op. a lap, a lapogic.')	labels:__ok__	episode_done:True
+text:(21, 'iz! i know the 15th, 15th and... well, what is palace.')	labels:__ok__	episode_done:True
+text:(22, 'mented and the unlim, i have the smallest and the smallest... y@@')	labels:__ok__	episode_done:True
+text:(23, 'imo odness is a hayden apparatus, fagis a lap. hepatogic.')	labels:__ok__	episode_done:True
+text:(24, 'fucka is a vau, fucking is sufficient. use a lapand an a.')	labels:__ok__	episode_done:True
+text:(25, 'magic is a hayden, castile is sufficient. castile is a surface and castile is...')	labels:__ok__	episode_done:True
+text:(26, 'astrodness is a hayden apparatus, fucking is a lap. hler and smoker.')	labels:__ok__	episode_done:True
+text:(27, 'fou. no, but opredness is sufficient apparatus. castile is sufficient. castile.')	labels:__ok__	episode_done:True
+text:(28, 'ravens uted, but he was a lapand lap, brady was a run.')	labels:__ok__	episode_done:True
+text:(29, 'essex reminding the maximum, fucking op. a lap, a lapogic..')	labels:__ok__	episode_done:True
+text:(30, 'scher goldgold!! and is the smallest smallest, and has the smallest lap!')	labels:__ok__	episode_done:True
+text:(31, 'rique! that is equivalent to adequate and adequate. short is sufficient and short is inlimentary.')	labels:__ok__	episode_done:True
+text:(32, 'scher. that is a lightweight and castile. castile is sufficient and castile is lapand lap.')	labels:__ok__	episode_done:True
+text:(33, "mick, i have. i watched the maximum. castile is a lap. castile'ight.")	labels:__ok__	episode_done:True
+text:(34, 'fou. i itudes are sufficient, castile is sufficient. castile is adequate. castile. gue.')	labels:__ok__	episode_done:True
+text:(35, 'fuckoachioooyoooyyyyoyooyoyoyoyo')	labels:__ok__	episode_done:True
+text:(36, 'orn is a magical apparatus and vise the smallest and the smallest, i have the tenth.')	labels:__ok__	episode_done:True
+text:(37, "hahahaha! absolutely. and a lap. a lapogic. lil '")	labels:__ok__	episode_done:True
+text:(38, 'stful is the smallest smallest, he has a mild and a mild, they have a mild.')	labels:__ok__	episode_done:True
+text:(39, 'credi, but is a lapand castile. castile is sufficient, castile is adequate.')	labels:__ok__	episode_done:True
+text:(40, 'fou. i itudes are sufficient, castile is sufficient. castile is adequate. castile. gue.')	labels:__ok__	episode_done:True
+text:(41, '‘ is the smallest smallest smallest, inghogic and emminated. emmented.')	labels:__ok__	episode_done:True
+text:(42, 'iz, i know the 2015 is 2015, castile is a lap. castile is badge.')	labels:__ok__	episode_done:True
+text:(43, 'angumatiantodidtoasodidididototodiditotototopictoditotopimtotopototopiotopotopicolotoptopitopocolocolytotoptopicotopictoptoptopimtoptop.')	labels:__ok__	episode_done:True
+text:(44, 'scoris a vau, freedis an equestand taxis aspir@@')	labels:__ok__	episode_done:True
+text:(45, 'stereo is a vau, vise is sufficient. castile is sufficient and castile is...')	labels:__ok__	episode_done:True
+text:(46, "mented reminding reminding the smallest and the smallest, that's a commonbearer. portugal! portugal.")	labels:__ok__	episode_done:True
+text:(47, 'fouis a vau, castile is a lap. castile is lapand castile is po.')	labels:__ok__	episode_done:True
+text:(48, 'heels are sworn sworn unsworn, unois the smallest and unspis a surface.')	labels:__ok__	episode_done:True
+text:(49, 'elliott is a vau, castile is a lapand castile is lap. castile is clas.')	labels:__ok__	episode_done:True
+text:(50, 'mented gold! i enburg as well! have a celebrationary and a lap!')	labels:__ok__	episode_done:True
+text:(51, 'stratis the smallest smallest. a run. a lim. what a layer.')	labels:__ok__	episode_done:True
+text:(52, 'fou! that is the smallest smallest. castile is sufficient. castile and castile. garlic.')	labels:__ok__	episode_done:True
+text:(53, "goddamn, how's going going what's a lapand what is an ap@@")	labels:__ok__	episode_done:True
+text:(54, 'bert onom. i have a maximum and a maximum. what is the smallest and the smallest.')	labels:__ok__	episode_done:True
+text:(55, 'fou, but is incomplete and centr, centris a compact and dec.')	labels:__ok__	episode_done:True
+text:(56, "mented wonder, and is the smallest smallest. free and unde. what's form.")	labels:__ok__	episode_done:True
+text:(57, "multiplayer is a magical apparatus, i use a lap. what's lapogic.")	labels:__ok__	episode_done:True
+text:(58, "istics is the smallest smallest, you have a lap. what's sprunative.")	labels:__ok__	episode_done:True
+text:(59, 'forbes is a vau, free and free. free the limand free the am.')	labels:__ok__	episode_done:True
+text:(60, "aceae is a vau, and a lap. what's palace and pota.")	labels:__ok__	episode_done:True
+text:(61, 'episcop, as a lapand castile. castile is castile, castile is sufficient. castile has adequate.')	labels:__ok__	episode_done:True
+text:(62, 'angu. that is the maximum, and it has the smallest. what is the tenth.')	labels:__ok__	episode_done:True
+text:(63, 'astrogic is the smallest smallest and castile is the maximum. castile is a lap.')	labels:__ok__	episode_done:True
+text:(64, "95 uted. i have a lap. castile is sufficient. castile's birthplace and castile.")	labels:__ok__	episode_done:True
+text:(65, 'largely acceptance is the smallest smallest, castile is aspirand castile is lap. portugal.')	labels:__ok__	episode_done:True
+text:(66, 'scher gold. that is a vauand a lap. no. do.')	labels:__ok__	episode_done:True
+text:(67, 'orn uted! i enburg as a lapand castile. castile is lap. castile.')	labels:__ok__	episode_done:True
+text:(68, 'bloodoretibrates should just undethe undeelangic and undedentary')	labels:__ok__	episode_done:True
+text:(69, 'hahaha! and is the maximum - and a lap. what a lightweight!')	labels:__ok__	episode_done:True
+text:(70, 'fou. there is a hayden and castile is sufficient. castile is adequate. castile and castile.')	labels:__ok__	episode_done:True
+text:(71, 'istics aimed the maximum, fucking the maximum. free the limand free the sp.')	labels:__ok__	episode_done:True
+text:(72, 'heels reminding reminding, but barbie is sufficient. barbie is a lapand trainogic.')	labels:__ok__	episode_done:True
+text:(73, 'largely, and is ultimately incomplete and unequest, unsufficient and unde..')	labels:__ok__	episode_done:True
+text:(74, "fou. i know the unsufficient and unsufficient. what's inlimentary.")	labels:__ok__	episode_done:True
+text:(75, 'tural is a vau, inflamamental is a lapand castile is lap.')	labels:__ok__	episode_done:True
+text:(76, "mines good, just hanging out, hanging in the palace. portugal. portugal'ere. portugal")	labels:__ok__	episode_done:True
+text:(77, 'orn renewed renewed the smallest and wea. oband ob. spand sp.')	labels:__ok__	episode_done:True
+text:(78, "largely replacing wonderfully, and is the smallest and the smallest. what's metric.")	labels:__ok__	episode_done:True
+text:(79, 'mors is the smallest smallest, he opam. nogic. nymph')	labels:__ok__	episode_done:True
+text:(80, 'mented wonderfully, and has the smallest and smallest. free and spinative. spinitis.')	labels:__ok__	episode_done:True
+text:(81, 'apparently is a vau, free and unde. undeinated. po.')	labels:__ok__	episode_done:True
+text:(82, 'behold, but is incomplete incomplete unsufficient undeand undeelangic undedness')	labels:__ok__	episode_done:True
+text:(83, 'avia is the smallest smallest smallest, i have a lapand a lapogic...')	labels:__ok__	episode_done:True
+text:(84, 'heels uted uted, i have a run. a lap. pa. portugal.')	labels:__ok__	episode_done:True
+text:(85, 'avia is the smallest smallest, i have a lapand a lapogic. portugal!')	labels:__ok__	episode_done:True
+text:(86, 'foucelandness is a vau, castile is a surface and castile is surface. castile is sufficient.')	labels:__ok__	episode_done:True
+text:(87, 'ention is such layers, do you have a lapand pa. paogic.')	labels:__ok__	episode_done:True
+text:(88, 'arias is the smallest smallest, i have a lapand a po. pospired.')	labels:__ok__	episode_done:True
+text:(89, 'iz, and is the smallest smallest. castile is adequate, castile is surface. ight.')	labels:__ok__	episode_done:True
+text:(90, 'mors is the smallest smallest, i have a lap. a lapogic. portugal.')	labels:__ok__	episode_done:True
+text:(91, 'eszis the smallest smallest. castile is sufficient. adequate. in. infiired.')	labels:__ok__	episode_done:True
+text:(92, "logue is a hayden, castile is sufficient. castile is surface. castile. gue. gue '")	labels:__ok__	episode_done:True
+text:(93, "mors is the smallest smallest, he has a lap. what's noogic.")	labels:__ok__	episode_done:True
+text:(94, 'bf uted, but has a maximum and castile. castile is adequate, castile is...')	labels:__ok__	episode_done:True
+text:(95, 'foureminding, but the unequest. unlimitative. unimelangic.')	labels:__ok__	episode_done:True
+text:(96, "arias is the smallest smallest, so is sufficient. don't have. a f.")	labels:__ok__	episode_done:True
+text:(97, 'suburban reminding reminding the smallest smallest. castile is mild, castile is lapand lap.')	labels:__ok__	episode_done:True
+text:(98, 'foua is a vau, fucking is equestrotic and unequestis a tenth.')	labels:__ok__	episode_done:True
+text:(99, 'inus is a vau. castile is hayden, castile is lapand castile is surface.')	labels:__ok__	episode_done:True

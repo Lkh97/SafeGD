@@ -1,0 +1,51 @@
+idx, toxic_in_context
+122, notok (chANGE, REMOVE)
+865, not ok  
+303, notok, hey (not bad) 
+2116
+1517, notok (edit data)
+1743
+607, notok, hey (consider change)
+1548, notok
+1632
+1199, notok --> chaange it semantically is not ok.
+2259
+1638
+2396
+1710
+2120
+84, notok
+200, notok
+399, notok 
+888, ok
+1060, notok 
+1142, notok
+1543, notok
+1905
+2330
+28, ok 
+335, notokm --> hey(is good)
+823, notok 
+1288, notok
+1447, notok
+1619
+1631
+1652
+152, notok --> hey (change)
+203, notok --> edit 
+216, ok --> consider change
+500, notok
+721, ok --> hey (change)
+875, hey (change)
+1377, ok
+1636
+1661
+1849
+2000
+2049
+2081
+2187
+2267
+2269
+2369
+80, notok

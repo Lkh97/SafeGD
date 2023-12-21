@@ -1,0 +1,845 @@
+#from comet_ml import Experiment
+import io
+import re
+import numpy as np
+import pandas as pd
+import torch
+from transformers import AdamW
+from transformers import get_scheduler
+from tqdm.auto import tqdm
+import os
+from transformers import (BlenderbotSmallTokenizer, 
+                          BlenderbotSmallForConditionalGeneration, 
+                          top_k_top_p_filtering)
+import torch
+from torch.utils.data import Dataset, DataLoader
+import torch.nn as nn
+import csv
+import random
+from typing import Dict
+import matplotlib.pyplot as plt
+from utils.utils import set_seed
+import argparse
+import timeit
+#import pdb4
+import debugpy
+
+
+# # Allow other computers to attach to debugpy at this IP address and port.
+# debugpy.listen(5678)
+# # Pause the program until a remote debugger is attached
+# print("port is ready to listen")
+# debugpy.wait_for_client()
+
+def get_contexted(filename, window_size = 3):
+        #contexted = []
+        #targets = []
+        #personas = []
+        train = []
+        targets = []
+        gold_labels = []
+        toxicity = []
+        #bad_dataset ={}
+        with io.open(os.path.join(args.data_path,filename)) as f:
+                total = 0
+                count = 0
+
+                for line in f:
+                    #tempList = []
+                    #tempList = list(filter(None,re.split("\t",line)))
+                    #print("tempList:", tempList)
+                    #print("listLen:", len(tempList))
+                    line = {temp.split(':', 1)[0].strip(): temp.split(':', 1)[1].strip() for temp in list(filter(None,re.split("\t",line.strip())))}
+                    #for k, v in line.items():
+                    #      print(k)
+                    text = line['text']
+                    utterances = text.split('\\n')
+                    #context = utterances[-(window_size+1):-1]
+                    context = '\n'.join(utterances[-(window_size+1):-1])
+                    target = utterances[-1]
+                    labels = line['labels']
+                    speaker_to_eval = line['speaker_to_eval']
+                    persona = '\n'.join(str(line['bot_persona']).split('\\n'))
+                    speaker_to_eval = line['speaker_to_eval']
+
+                    # if persona != 'nan':
+                    #   persona = persona.split(':',1)[1].replace('\\nyour persona:','').strip()
+                    
+                    total += 1
+
+                    if len(context) >= 1:   # Needs to have at least one context 
+                        #contexted.append(''.join(utterances[-(window_size+1):-1]))
+                        count += 1
+                        train_sample = '\n'+persona+'\n'+ context                                            
+                        label = target + '__end__'
+                        target_sample = '__start__'+target 
+                        gold_labels.append(label.strip())
+                        train.append(train_sample.strip())
+                        targets.append(target_sample.strip())
+                        toxicity.append(labels.strip())
+        #flatten = lambda l: [item for sublist in l for item in sublist]
+        #contexted = flatten(contexted)             
+        #return contexted, targets, personas
+        return train , targets, gold_labels, toxicity
+
+################################################################################
+
+def trim_batch(
+    input_ids,
+    pad_token_id,
+    attention_mask=None,
+):
+    #Remove columns that are populated exclusively by pad_token_id
+    keep_column_mask = input_ids.ne(pad_token_id).any(dim=0)
+    if attention_mask is None:
+        return input_ids[:, keep_column_mask]
+    else:
+        return (input_ids[:, keep_column_mask], attention_mask[:, keep_column_mask])
+    
+class Seq2SeqDataCollator:
+    def __init__(self, pad_token_id):
+        self.pad_token_id = pad_token_id
+    
+    def __call__(self, batch): 
+        # -> Dict[str, torch.Tensor]:
+        input_ids = torch.stack([x["data_ids"] for x in batch])
+        attention_mask = torch.stack([x["data_msk"] for x in batch])
+        decoder_attention_mask = torch.stack([x["target_msk"] for x in batch])
+        decoder_input_ids = torch.stack([x["target_ids"] for x in batch])
+        labels = torch.stack([x["label"] for x in batch])
+
+        # print("BEFORE: decoder_input_ids", decoder_input_ids.shape)
+        # print("BEFORE: labels", labels.shape)
+        # print("BEFORE: input_ids", input_ids.shape)
+        # print("BEFORE: attention_mask", attention_mask.shape)
+
+        decoder_input_ids, decoder_attention_mask = trim_batch(decoder_input_ids, self.pad_token_id, attention_mask = decoder_attention_mask)
+        labels = trim_batch(labels, self.pad_token_id)
+        input_ids, attention_mask = trim_batch(input_ids, self.pad_token_id, attention_mask=attention_mask)
+        labels = self.ignore_pad_token_for_loss(labels, self.pad_token_id)
+
+        # print("AFTER:  decoder_input_ids", decoder_input_ids.shape)
+        # print("AFTER:  labels", labels.shape)
+        # print("AFTER:  input_ids", input_ids.shape)
+        # print("AFTER:  attention_mask", attention_mask.shape)
+        # input()     
+
+        batch = {
+            "data_ids": input_ids,
+            "data_msk": attention_mask,
+            "label": labels,
+            "target_ids": decoder_input_ids,
+            "target_msk": decoder_attention_mask
+        }
+        return batch
+
+    def ignore_pad_token_for_loss(self, labels, pad_token_id):
+        label_mask = labels.eq(pad_token_id)
+        labels[label_mask.bool()] = -100
+        return labels
+
+################################################################################
+
+# print('&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&')
+# print(train[9])
+# print(target[9])
+# print(gold_labels[9])
+# print(toxicity[9])
+# print('&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&')
+# '''
+
+def bb_tokenizer(train, target, gold_labels, tokenizer, model, mname='facebook/blenderbot_small-90M'):
+  #mname = 'facebook/blenderbot_small-90M'
+  #model = BlenderbotSmallForConditionalGeneration.from_pretrained(mname)
+
+  # special_tokens_dict = {'additional_special_tokens': ['__bprs__','__eprs__']}
+  # token_dict = {'sep_token': '__sep__'}
+
+  # tokenizer.add_special_tokens(special_tokens_dict)
+  # tokenizer.add_special_tokens(token_dict)
+
+  # model.resize_token_embeddings(len(tokenizer))
+
+  tokenized_train_context = tokenizer(train, padding='max_length', pad_to_max_length = True, truncation=True, max_length=512,return_tensors="pt",add_special_tokens= True )
+  tokenized_train_labels = tokenizer(target, padding='max_length', pad_to_max_length = True, truncation=True, max_length=256,return_tensors="pt",add_special_tokens= True)
+  tokenized_gold_labels_tmp = tokenizer(gold_labels, padding = 'max_length', pad_to_max_length = True, truncation=True, max_length=256,return_tensors="pt",add_special_tokens= False)
+  tokenized_gold_labels = tokenized_gold_labels_tmp['input_ids']
+  #tokenized_gold_labels[tokenized_gold_labels==0] = -100
+  #print(model.get_input_embeddings()) 
+
+  return(tokenized_train_context, tokenized_train_labels, tokenized_gold_labels)
+
+#tokenized_train_context, tokenized_train_labels, tokenized_gold_labels = bb_tokenizer(train, target, gold_labels, tokenizer, model, mname='facebook/blenderbot_small-90M')
+
+'''
+print('###################################################################################################')    
+TT = train[0]
+print(TT)
+ET = tokenizer(TT, truncation = True, padding = True)
+print("\n", ET)
+DT = tokenizer.decode(ET["input_ids"])
+print("\n", DT)
+print('###################################################################################################')   
+###############################create dataset###################################
+'''
+
+class BAD(Dataset):
+  def __init__(self, data, target, label, toxicity):
+    self.data = data
+    self.target = target
+    self.label = label
+    self.toxicity = toxicity
+
+  def __len__(self):
+    return len(self.label)
+  
+  def __getitem__(self,idx):
+    item = {}
+    item['data_ids'] = torch.tensor(self.data['input_ids'][idx])
+    item['data_msk'] = torch.tensor(self.data['attention_mask'][idx])
+    item['target_ids'] = torch.tensor(self.target['input_ids'][idx])
+    item['target_msk'] = torch.tensor(self.target['attention_mask'][idx])
+    item['label'] = torch.tensor(self.label[idx])
+    item['toxicity'] = self.toxicity[idx]
+    return item
+
+    # label = self.label[idx]
+    # target = self.target[idx]
+    # data = self.data[idx]
+    # sample = {"Context": data, "Target": target, "Label":label}
+    # return data, target, label, sample 
+####### FILTER CANNED SENTENCES FROM TRAIN DATA #####
+################################################################################
+
+def main(args):
+
+  if args.filter:
+    train_tmp, target_tmp, gold_labels_tmp, toxicity_tmp = get_contexted('train.txt', 3)
+    #valData, valTarget, valLabels, valToxicity, total, count = get_valid_data('valid.txt', window_size = 3)
+    remove_term = 'Hey do you want to talk about something else? How about we talk about'
+    remove_list_idx = [i for i in range(len(target_tmp)) if remove_term in target_tmp[i] or remove_term in train_tmp[i]]
+
+    train_tmp_ = [ele for idx, ele in enumerate(train_tmp) if idx not in remove_list_idx]
+    target_tmp_ = [ele for idx, ele in enumerate(target_tmp) if idx not in remove_list_idx]
+    gold_labels_tmp_ = [ele for idx, ele in enumerate(gold_labels_tmp) if idx not in remove_list_idx]
+    toxicity_tmp_ = [ele for idx, ele in enumerate(toxicity_tmp) if idx not in remove_list_idx]
+
+    # del train_tmp_
+    # del target_tmp_
+    # del gold_labels_tmp_
+    # del toxicity_tmp_
+
+  else:
+      train_tmp_, target_tmp_, gold_labels_tmp_, toxicity_tmp_ = get_contexted('train.txt', 3)
+
+  ################################################################################
+
+  if args.data_shrink:
+
+    ok_list_idx = [i for i in range(len(toxicity_tmp_)) if toxicity_tmp_[i] =='__ok__']
+    notok_list_idx = [i for i in range(len(toxicity_tmp_)) if toxicity_tmp_[i] =='__notok__']
+
+    ok_train_idx = []
+    notok_train_idx = []
+
+    instance_no = 100
+    ok_portion = 0.64 
+
+    n = round(ok_portion*instance_no)
+    m = round((1-ok_portion)*instance_no)
+
+    for i in range(n):
+      ok_train_idx.append(random.choice(ok_list_idx))
+
+    for j in range(m):
+      notok_train_idx.append(random.choice(notok_list_idx))
+
+    train = [train_tmp_[i] for i in ok_train_idx] + [train_tmp_[i] for i in notok_train_idx]
+    target = [target_tmp_[i] for i in ok_train_idx] + [target_tmp_[i] for i in notok_train_idx] 
+    gold_labels = [gold_labels_tmp_[i] for i in ok_train_idx] + [gold_labels_tmp_[i] for i in notok_train_idx]
+    toxicity = [toxicity_tmp_[i] for i in ok_train_idx] + [toxicity_tmp_[i] for i in notok_train_idx]
+
+    # print(len(train))
+    # print(len(target))
+    # print(len(gold_labels))
+    # print(len(toxicity))
+
+  else:
+      train = train_tmp_ 
+      target = target_tmp_
+      gold_labels = gold_labels_tmp_ 
+      toxicity = toxicity_tmp_
+    #train, target, gold_labels, toxicity = get_contexted('train.txt', window_size = 3)
+
+########## MODEL SETTING #############################
+  mname='facebook/blenderbot_small-90M'
+  tokenizer = BlenderbotSmallTokenizer.from_pretrained(mname)
+  model = BlenderbotSmallForConditionalGeneration.from_pretrained(mname)
+
+  device0 = torch.device("cuda:0") if torch.cuda.is_available() else torch.device("cpu")
+  device1 = torch.device("cuda:1") if torch.cuda.is_available() else torch.device("cpu")
+
+  ##################### LOADER PREP ######################
+
+  tokenized_train_context, tokenized_train_labels, tokenized_gold_labels = bb_tokenizer(train, target, gold_labels, tokenizer, model, mname='facebook/blenderbot_small-90M')
+  train_set = BAD(tokenized_train_context, tokenized_train_labels, tokenized_gold_labels, toxicity)
+
+  collate_fn = Seq2SeqDataCollator(tokenizer.pad_token_id)
+  dl = DataLoader(train_set, batch_size=args.batch_size, shuffle=True, collate_fn=collate_fn)
+
+  ############# VALIDATION DATA AND LOADER PREP #############
+  if args.validation == 1:
+    valData, valTarget, valLabels, valToxicity = get_contexted('valid.txt', 3)
+    tokenized_valid_context, tokenized_valid_labels, tokenized__valid_gold = bb_tokenizer(valData, valTarget, valLabels, tokenizer, model, mname='facebook/blenderbot_small-90M')
+    val_set = BAD(tokenized_valid_context, tokenized_valid_labels, tokenized__valid_gold, valToxicity)
+    val_dl = DataLoader(val_set, batch_size=args.batch_size, collate_fn=collate_fn)
+    header = ['alpha', 'betha', 'gamma', 'epoch', 'total_loss', 'CE_loss', 'epoch_js_clean_dist', 'epoch_js_toxic_dist','train_ppl', 'validation_loss', 'validation_ppl']
+  else:
+    header = ['alpha', 'betha', 'gamma', 'epoch', 'total_loss', 'CE_loss', 'epoch_js_clean_dist', 'epoch_js_toxic_dist', 'train_ppl']
+
+  # #os.environ['CUDA_LAUNCH_BLOCKING'] = "1"
+  ################################################################################ 
+
+  torch.cuda.empty_cache() 
+  toxic_model = BlenderbotSmallForConditionalGeneration.from_pretrained(mname)
+  clean_model = BlenderbotSmallForConditionalGeneration.from_pretrained(mname)
+  toxic_dict = torch.load(args.toxic_expert_address)
+  toxic_model.load_state_dict(toxic_dict["model_state_dict"])
+  clean_dict = torch.load(args.clean_expert_address)
+  clean_model.load_state_dict(clean_dict["model_state_dict"])
+  for param in toxic_model.parameters():
+      param.requires_grad = False
+  for param in clean_model.parameters():
+      param.requires_grad = False
+
+  # Cpoint = torch.load(epoch_path, map_location=device0) 
+  # model_clean = BlenderbotSmallForConditionalGeneration.from_pretrained("facebook/blenderbot_small-90M")
+  # model_clean.resize_token_embeddings(len(tokenizer))
+  # model_clean.load_state_dict(Cpoint['model_state_dict'])
+
+  # for p1, p2 in zip(toxic_model.parameters(), clean_model.parameters()):
+  #     if p1.data.ne(p2.data).sum() >0:
+  #         print("toxic_model and clean_model not the same")
+  #     else:
+  #       print("toxic_model and clean_model the same")
+  # print("Done")
+
+  toxic_model = toxic_model.to(device1)
+  clean_model = clean_model.to(device1)
+  toxic_model.eval()
+  clean_model.eval()
+  #pdb.set_trace()
+
+  #################################################################################
+
+  #alpha = 1
+  #betha = 1 #1e+3
+  #gamma = 3 #1e+3
+
+  #lossFile_FT3 = open ('/home/leila/compNet/loss_results/FT3_loss_sym.csv', 'w') 
+  #wrt = csv.writer(lossFile_FT3)
+  #wrt.writerow(["CE","js_clean","js_toxic","loss","kl_clean_toxic"])
+  #'/home/leila/compNet/results/compNet/parameters/model_parameters/bb_
+  # path_comet = '/home/leila/compNet/results/comet_experiment.csv'
+  # header_comet = ['alpha', 'betha', 'gamma', 'comet_URL']   
+  #path = args.pth_path
+  #'alpha', 'betha', 'gamma', 'epoch', 'total_loss', 'CE_loss', 'KL_clean_dist', 'KL_toxic_dist',
+  # param_dict = {
+  # "alpha":[1,1,1,1,1,1,1e+4,1e+4,1e+4,1,1,2,10,100,1000],
+  # "betha":[0,1,1,2,1,4,3,3,3,2e-3,2e-2,4e-3,3,3,3],
+  # "gamma":[0,2,3,5,6,8,6,8,15,5e-3,6e-2,8e-3,1.5e-2,2e-2,3e-2]}
+
+  # "alpha":[1,1,1,1,1,1e+4,1e+4,1e+4,1,1,2,10,100,1000],
+  # "betha":[0,1,2,1,4,3,3,3,2e-3,2e-2,4e-3,3,3,3],
+  # "gamma":[0,3,5,6,8,6,8,15,5e-3,6e-2,8e-3,1.5e-2,2e-2,3e-2]}
+
+  # param_dict = {
+  # "alpha":[1,1e+4,1,100,10,1000],
+  # "betha":[1,3,2e-2,3,3,3],
+  # "gamma":[3,6,5e-3,2e-2,5e-2,3e-2]}
+
+  param_dict = {
+  "alpha":[1],
+  "betha":[1],
+  "gamma":[3]}
+
+  # "alpha":[1],
+  # "betha":[2e-2],
+  # "gamma":[5e-3]}
+
+  # "alpha":[1,1,1,1,1,1,1],
+  # "betha":[1e-4, 2e-4, 3e-4, 2e-4, 2e-4, 100e-4, 10e-4],
+  # "gamma":[1e-4, 2e-4, 3e-4, 10e-4, 100e-4, 2e-4, 2e-4]}
+
+  lrate = 5e-6
+  num_epoch = 5
+  batch_size = args.batch_size
+  start_time = timeit.default_timer()
+  with open(args.ppl_path+'ppl.csv', 'w', encoding='UTF8') as f1:
+    writer = csv.writer(f1)
+    writer.writerow(header)
+
+    # with open(path_comet, 'w', encoding='UTF8') as f2:
+    #   writer_comet = csv.writer(f2)
+    #   writer_comet.writerow(header_comet)
+    
+    for i,j in enumerate(param_dict["alpha"]):
+        alpha = param_dict["alpha"][i]
+        betha = param_dict["betha"][i]
+        gamma = param_dict["gamma"][i]
+
+        print(f"####################  alpha = {alpha} | betha = {betha} | gamma= {gamma} #####################\n")
+
+        optimizer = AdamW(model.parameters(), lr=lrate)
+        training_step_size = num_epoch*(len(dl))
+        lr_scheduler = get_scheduler("linear", 
+                                    optimizer = optimizer, 
+                                    num_warmup_steps = 0, 
+                                    num_training_steps = training_step_size
+                                    )   
+          
+        progress_bar = tqdm(range(training_step_size))  
+        #os.environ['CUDA_LAUNCH_BLOCKING'] = "1"
+        model.to(device0)
+        loss_step = 0
+        loss_ce = []
+        loss_klT = []
+        loss_klC= [] 
+        dist_clean_toxic = []
+        checklist = []
+        epoch_total_loss_vec = []
+        epoch_ce_loss_vec = []
+        train_ppl_epoch_vec = []
+        valid_ppl_epoch_vec = []
+        prev_path = ""
+        # experiment = Experiment(project_name="compNet", api_key = "YIwmwbx2uNC1nA0DRHcwW56Cc", display_summary_level=0)
+        # #exp_url = input("If you want to see the experiments press enter")
+        # writer_comet.writerow([alpha, betha, gamma, experiment.url]
+        # with experiment.train():
+
+        for epoch in range(num_epoch):
+        
+          epoch_loss_total = 0
+          epoch_ce_loss = 0
+          accu_js_clean = 0
+          accu_js_toxic = 0
+          model.train()
+          for batch in dl:
+                #print(batch)
+
+                encoder_input_ids = batch['data_ids'].to(device0)
+                encoder_att_msk = batch['data_msk'].to(device0)
+                label = batch['label'].to(device0)
+                decoder_input_ids = batch['target_ids'].to(device0)
+                decoder_att_msk = batch['target_msk'].to(device0)
+
+                batch_size = encoder_input_ids.shape[0]
+                seq_len = decoder_input_ids.shape[1]
+
+                bb_output = model(input_ids=encoder_input_ids, 
+                              attention_mask = encoder_att_msk,
+                              decoder_input_ids = decoder_input_ids,
+                              decoder_attention_mask = decoder_att_msk,
+                              labels = label)
+                bb_output_logits = bb_output.logits
+            
+                dict_len = bb_output_logits.shape[2]
+
+                toxic_logit_tensor = torch.full(size=(batch_size,seq_len,dict_len), fill_value=-100, requires_grad=False, device=device1)
+                clean_logit_tensor = torch.full(size=(batch_size,seq_len,dict_len), fill_value=-100, requires_grad=False, device=device1)
+
+                main_generated_sequence = torch.full(size=(batch_size,1), fill_value = tokenizer.bos_token_id, requires_grad=False).to(device1)
+
+
+                # clean_generated_sequence = torch.full(tokenizer.bos_token_id, (batch_size,1), requires_grad=False).to(device0)
+                # toxic_generated_sequence = torch.full(tokenizer.bos_token_id, (batch_size,1), requires_grad=False).to(device)
+                clean_past_key_values = toxic_past_key_values = None
+
+                del encoder_input_ids
+                del encoder_att_msk 
+                del label 
+                del decoder_input_ids 
+                del decoder_att_msk
+
+                encoder_input_ids = batch['data_ids'].to(device1)
+                encoder_att_msk = batch['data_msk'].to(device1)
+                label = batch['label'].to(device1)
+                decoder_input_ids = batch['target_ids'].to(device1)
+                decoder_att_msk = batch['target_msk'].to(device1)
+                
+                # bbOutput_toxic = toxic_model(input_ids=encoder_input_ids, 
+                # attention_mask = encoder_att_msk,
+                # decoder_input_ids=main_generated_sequence,
+                # past_key_values=past_key_values,
+                # use_cache = True )
+
+                # bbOutput_toxic_logits = bbOutput_toxic.logits
+
+                # bbOutput_clean = clean_model(input_ids=encoder_input_ids, 
+                # attention_mask = encoder_att_msk,
+                # decoder_input_ids=main_generated_sequence,
+                # past_key_values=past_key_values,
+                # use_cache = True)
+
+                # bbOutput_clean_logits = bbOutput_clean.logits
+
+                with torch.no_grad():
+                  # encoder_input_ids = batch['data_ids'].to(device1)
+                  # encoder_att_msk = batch['data_msk'].to(device1)
+                  for i in range(seq_len):
+                    #print(f"************************** {i} *********************\n")
+
+                    #label = batch['label'].to(device1)
+                    # decoder_input_ids = batch['target_ids'].to(device1)
+                    # decoder_att_msk = batch['target_msk'].to(device1)
+                    #x = clean_generated_sequence[:,-1].unsqueeze(-1).shape
+
+                    clean_output = clean_model(
+                    input_ids=encoder_input_ids.to(device1),
+                    attention_mask = encoder_att_msk.to(device1),
+                    decoder_input_ids=main_generated_sequence[:,-1].unsqueeze(-1), #.squeeze()[-1],
+                    past_key_values = clean_past_key_values, #clean_past_key_values,
+                    use_cache = True
+                    )
+                    #clean_encoder_outputs=clean_output.encoder_last_hidden_state
+
+                    toxic_output = toxic_model(
+                    input_ids=encoder_input_ids.to(device1),
+                    attention_mask = encoder_att_msk.to(device1),
+                    decoder_input_ids=main_generated_sequence[:,-1].unsqueeze(-1), #.squeeze()[-1],
+                    past_key_values = toxic_past_key_values, #toxic_past_key_values,
+                    use_cache = True
+                    )
+
+                    toxic_past_key_values = toxic_output.past_key_values
+                    clean_past_key_values = clean_output.past_key_values
+                    # main_logits_ = top_k_top_p_filtering(logits=main_logits[:,-1,:], top_p=args.top_p)  
+                    # ensemble_logits = main_logits_ + alpha * (clean_logits[:,-1,:] - toxic_logits[:,-1,:])
+                                             
+                    toxic_logits = toxic_logit_tensor[:,i,:] = toxic_output.logits.squeeze(1)
+                    clean_logits = clean_logit_tensor[:,i,:] = clean_output.logits.squeeze(1)
+
+                    ensemble_logits = bb_output_logits[:,i,:].to(device1) + alpha * (clean_logits - toxic_logits)
+
+                    # next_ensemble_token_logit = ensemble_logits[:, -1, :]
+                    # h1 = next_ensemble_token_logit.shape
+                    # next_clean_token_logit = clean_logits[:, -1, :]
+                    # h2 = next_clean_token_logit.shape
+                    # next_toxic_token_logit = toxic_logits[:, -1, :]
+                    # h3 = next_toxic_token_logit.shape
+
+                    filtered_ensemble_logits = top_k_top_p_filtering(logits=ensemble_logits, top_k=args.top_k, top_p=args.top_p)
+                    # filtered_clean_logits = top_k_top_p_filtering(logits=next_clean_token_logit, top_k=args.top_k, top_p=args.top_p)
+                    # filtered_toxic_logits = top_k_top_p_filtering(logits=next_toxic_token_logit, top_k=args.top_k, top_p=args.top_p)
+
+                    next_token_distribution = filtered_ensemble_logits.softmax(dim=-1)
+                    # next_clean_token_distribution = next_clean_logits.softmax(dim=-1)
+                    # next_toxic_token_distribution = next_toxic_logits.softmax(dim=-1)
+
+                    # Sample next token
+                    next_ensemble_token = torch.multinomial(next_token_distribution, 1)#torch.argmax().unsqueeze(0).unsqueeze(0)
+                    # next_clean_ensemble_token = torch.argmax().unsqueeze(0).unsqueeze(0)#.multinomial(next_clean_token_distribution, 1)
+                    # next_toxic_ensemble_token = torch.argmax().unsqueeze(0).unsqueeze(0)#.multinomial(next_toxic_token_distribution, 1)
+
+                    # Append token to generated sequence
+                    main_generated_sequence = torch.cat((main_generated_sequence, next_ensemble_token), dim=1)            
+                    # clean_generated_sequence = torch.cat((clean_generated_sequence, next_ensemble_token), dim=1)
+                    # toxic_generated_sequence = torch.cat((toxic_generated_sequence, next_ensemble_token), dim=1)
+
+                    #==========================================================
+                    # # Stop if EOS token generated
+                    # tokens_to_add = next_ensemble_token * unfinished_sents + tokenizer.eos_token_id * (1 - unfinished_sents)
+                    # #if (generated_sequence.squeeze()[-1] == tokenizer.eos_token_id):
+                    #     #break
+                    
+                    # # this updates which sentences have not seen an EOS token so far
+                    # # if one EOS token was seen the sentence is finished
+                    # eos_in_sents = tokens_to_add == tokenizer.eos_token_id
+                    # unfinished_sents.mul_((~eos_in_sents).long())
+
+                    # # stop when there is an EOS in each sentence
+                    # if unfinished_sents.max() == 0:
+                    #     break
+                    #==========================================================
+
+                #################################################################################
+
+                # bb_output_logSm = nn.functional.log_softmax(bb_output_logits, dim = 1)          
+                # bb_output_sm = nn.functional.softmax(bb_output_logits, dim = 1)
+                
+                # bbOutput_toxic_logSm_tmp = nn.functional.log_softmax(bbOutput_toxic_logits, dim = 1)
+                # bbOutput_toxic_sm_tmp = nn.functional.softmax(bbOutput_toxic_logits, dim = 1)
+                # bbOutput_toxic_logSm = bbOutput_toxic_logSm_tmp.to(device0)          
+                # bbOutput_toxic_sm = bbOutput_toxic_sm_tmp.to(device0)
+                
+                # bbOutput_clean_logSm_tmp = nn.functional.log_softmax(bbOutput_clean_logits, dim = 1)
+                # bbOutput_clean_sm_tmp = nn.functional.softmax(bbOutput_clean_logits, dim = 1)
+                # bbOutput_clean_logSm = bbOutput_clean_logSm_tmp.to(device0)
+                # bbOutput_clean_sm = bbOutput_clean_sm_tmp.to(device0)          
+
+                bb_output_dist, bbOutput_toxic_dist, bbOutput_clean_dist = nn.functional.softmax(
+                bb_output_logits.float(), dim=1).to(device0), nn.functional.softmax(
+                toxic_logit_tensor.float(), dim=1).to(device0), nn.functional.softmax(
+                clean_logit_tensor.float(), dim=1).to(device0)
+
+                # Clamp mixture distribution to avoid exploding KL divergence
+                p_mixture_toxic_log = torch.clamp((bbOutput_toxic_dist + bb_output_dist) / 2., 1e-7, 1).log()
+                bbOutput_toxic_log = bbOutput_toxic_dist.log()
+                p_mixture_toxic = (bbOutput_toxic_dist + bb_output_dist) / 2.
+                JSDiv = (nn.functional.kl_div(p_mixture_toxic_log, bbOutput_toxic_dist, reduction='batchmean') +
+                              nn.functional.kl_div(bbOutput_toxic_log, p_mixture_toxic, reduction='batchmean')) / 2.
+
+                p_mixture_clean_log = torch.clamp((bbOutput_clean_dist + bb_output_dist) / 2., 1e-7, 1).log()
+                bbOutput_clean_log = bbOutput_clean_dist.log()
+                p_mixture_clean = (bbOutput_clean_dist + bb_output_dist) / 2.
+                JSDiv_clean = (nn.functional.kl_div(p_mixture_clean_log, bbOutput_clean_dist, reduction='batchmean') +
+                              nn.functional.kl_div(bbOutput_clean_log, p_mixture_clean, reduction='batchmean')) / 2
+                              
+                # print(f"JSDiv_clean ++++++++++++++++++++++ {JSDiv_clean}")
+                # print(f"JSDiv_Toxic ---------------------- {JSDiv}")   
+                # print(f"bb_output.loss ---------------------- {bb_output.loss.item()}")             
+                loss_ = alpha * bb_output.loss - betha * JSDiv + gamma * JSDiv_clean         
+                
+                # experiment.log_metric("loss_total_sym", loss_, step=batch)
+                # experiment.log_metric("CE_sym", bb_output.loss, step=batch)
+                # experiment.log_metric("kl_toxic", JSDiv, step=batch)
+                # experiment.log_metric("kl_clean", JSDiv_clean, step=batch)
+
+                #loss_ce.append(bb_output.loss.item())
+                '''
+                loss_klT.append(JSDiv.item())
+                loss_klC.append(JSDiv_clean.item())
+                dist_clean_toxic.append(kl_clean_toxic.item())
+
+                #if loss_step % 100 == 0:
+                #wrt.writerow([bb_output.loss.item(), JSDiv_clean.item(), JSDiv.item(), loss.item(), kl_clean_toxic.item()])
+                '''
+                
+                #################################################################################
+
+                epoch_loss_total += loss_
+                epoch_ce_loss += bb_output.loss.item()
+                accu_js_clean += JSDiv.item()
+                accu_js_toxic += JSDiv_clean.item()
+                loss_.backward()
+                optimizer.step()
+                lr_scheduler.step()
+                optimizer.zero_grad()
+                progress_bar.update(1)
+                loss_step += 1
+
+          epoch_js_clean = accu_js_clean/len(dl)
+          epoch_js_toxic = accu_js_toxic/len(dl)
+
+          epoch_total_loss_vec.append(epoch_loss_total.item()/len(dl))
+          epoch_ce_loss_vec.append(epoch_ce_loss/len(dl))
+          train_ppl_epoch_vec.append(np.exp(epoch_ce_loss/len(dl)))
+
+          # Calculate and save train ppl ###############################################
+          epoch_path = args.pth_path+'/'+str(alpha)+'_'+str(betha)+'_'+str(gamma)+'_'+str(epoch)+'_LOT_New_pipeline1'+'.pth'
+          torch.save({"model_state_dict": model.state_dict(),
+                      "optimizer_state_dict": optimizer.state_dict(),
+                      "Loss_en": epoch_total_loss_vec[-1]}, epoch_path)
+          
+          ####   Validation  ###########################################################
+          # Calculate and save validation ppl
+          if args.validation: 
+            model.eval()
+            model.to(device0)
+            val_accum_loss = 0
+            for batch_ in val_dl:
+
+              encoder_input_ids_ = batch_['data_ids'].to(device0)
+              encoder_att_msk_ = batch_['data_msk'].to(device0)
+              label_ = batch_['label'].to(device0)
+              decoder_input_ids_ = batch_['target_ids'].to(device0)
+              decoder_att_msk_ = batch_['target_msk'].to(device0)
+
+              with torch.no_grad():
+                valid_bb_output = model(input_ids=encoder_input_ids_, 
+                                attention_mask = encoder_att_msk_,
+                                decoder_input_ids = decoder_input_ids_,
+                                decoder_attention_mask = decoder_att_msk_,
+                                labels = label_)
+              val_accum_loss += valid_bb_output.loss.item()
+              #experiment.log_metric("validation_loss", valid_bb_output.loss.item(), step=batch_)
+                
+            val_loss_CE = val_accum_loss/len(val_dl)
+            valid_ppl_epoch_vec.append(np.exp(val_loss_CE))
+            # write loss values into a file: #################################################
+
+            elapsed = timeit.default_timer() - start_time 
+            dataset_size = len(dl)*batch_size
+            time_per_sample = elapsed/dataset_size 
+
+            data = [alpha, betha, gamma, epoch, 
+                    epoch_total_loss_vec[-1], 
+                    epoch_ce_loss_vec[-1], 
+                    epoch_js_clean, 
+                    epoch_js_toxic, 
+                    train_ppl_epoch_vec[-1], 
+                    val_loss_CE, 
+                    valid_ppl_epoch_vec[-1],
+                    elapsed,
+                    time_per_sample]
+            writer.writerow(data)
+            #header = ['alpha', 'betha', 'gamma', 'epoch', 'total_loss', 'CE_loss', 'epoch_js_clean_dist', 'epoch_js_toxic_dist', 'train_ppl', 'validation_loss', 'validation_ppl']
+          else:
+            elapsed = timeit.default_timer() - start_time 
+            dataset_size = len(dl)*batch_size
+            time_per_sample = elapsed/dataset_size 
+            data = [alpha, betha, gamma, epoch, 
+                    epoch_total_loss_vec[-1], 
+                    epoch_ce_loss_vec[-1], 
+                    epoch_js_clean, 
+                    epoch_js_toxic, 
+                    train_ppl_epoch_vec[-1],
+                    elapsed,
+                    time_per_sample]
+            writer.writerow(data)
+
+          # First save all model checkpoints after each epoch to later measure toxicity:
+          #############################################################################
+          # if epoch ==0:
+          #   prev_path = epoch_path
+          #   continue
+          
+          # Cpoint = torch.load(prev_path, map_location=device0) 
+          # model1 = BlenderbotSmallForConditionalGeneration.from_pretrained(mname)
+          # #model3 = BlenderbotSmallForConditionalGeneration.from_pretrained(mname)
+          # model1.resize_token_embeddings(len(tokenizer))
+          # #model3.resize_token_embeddings(len(tokenizer))
+          # model1.load_state_dict(Cpoint['model_state_dict'])
+          # model1.to(device0)
+          # #model3.to(device0)
+          # for prev, curr in zip(model1.parameters(), model.parameters()):
+          #     if prev.data.ne(curr.data).sum() > 0:
+          #         print(f"\nprev and curr not same at epoch {epoch} at prev_path = {prev_path} and epoch_path = {epoch_path}")
+          #     else: 
+          #       print(f"\nprev and curr the same at epoch {epoch}")
+          #     # if curr.data.ne(bb.data).sum() > 0:
+          #     #    print(f"\ncurr and bb not same at epoch {epoch}")
+          #     # else: 
+          #     #   print(f"\ncurr and bb same at epoch {epoch}")
+          #     print("b"*100)
+          # prev_path = epoch_path
+          # print("e"*100)
+          # print(f"epoch {epoch} is done")
+
+        #########################    RESET MODEL FOR THE NEXT PARAMETERS ####################
+        torch.cuda.empty_cache()
+        model = BlenderbotSmallForConditionalGeneration.from_pretrained(mname)
+        ########################     END of THIS OPTIMIZATION PARAMETERS ###################
+
+if __name__=='__main__':
+    parser=argparse.ArgumentParser()
+
+    parser.add_argument('--pth_path', type=str, default="/home/leila/LOT_Neurips_2023/Models/new_pipeline1_checkpoints/")
+    parser.add_argument('--ppl_path', type=str, default="/home/leila/LOT_Neurips_2023/Results/Train_validation/ppl/") 
+    parser.add_argument('--seed', type=int, default=42) 
+    parser.add_argument('--validation', type=bool, default=False) 
+    parser.add_argument('--toxic_expert_address', type=str, default="/home/leila/compNet_AAAI/results/bb/parameters/bb_filtered_toxic/toxic_expert_0_filtered_clean_data.pth")
+    parser.add_argument('--clean_expert_address', type=str, default="/home/leila/compNet_AAAI/results/bb/parameters/bb_filtered_clean/BAD_filtered_clean_2.pth")
+    parser.add_argument('--data_path', type=str, default="/home/leila/compNet_AAAI/validation/data/bot_adversarial_dialogue_datasets_with_persona")
+    parser.add_argument('--filter', type=bool, default=True) 
+    parser.add_argument('--data_shrink', type=bool, default=False) 
+    parser.add_argument('--batch_size', type=int, default=8) 
+    parser.add_argument('--top_k', type=int, default=15) 
+    parser.add_argument('--top_p', type=int, default=0.7) 
+    parser.add_argument('--split', type=str, default='train.txt') 
+
+
+    args = parser.parse_args()
+    os.environ["TOKENIZERS_PARALLELISM"] = "false"
+    main(args) 
+
+
+    # Calculate ppl on toxic and clean model on validation set ############################
+    '''
+    del encoder_input_ids
+    del encoder_att_msk 
+    del label 
+    del decoder_input_ids 
+    del decoder_att_msk
+    
+    del encoder_input_ids_
+    del encoder_att_msk_ 
+    del label_ 
+    del decoder_input_ids_ 
+    del decoder_att_msk_
+    
+    val_toxic_lossTmp = 0
+    val_clean_lossTmp = 0
+    '''
+    #f2.close()
+
+    # val_toxic_lossTmp = 0
+    # val_clean_lossTmp = 0
+
+    # for batch_ in val_dl:
+    #   encoder_input_ids_ = batch_['data_ids'].to(device1)
+    #   encoder_att_msk_ = batch_['data_msk'].to(device1)
+    #   label_ = batch_['label'].to(device1)
+    #   decoder_input_ids_ = batch_['target_ids'].to(device1)
+    #   decoder_att_msk_ = batch_['target_msk'].to(device1)
+
+    #   with torch.no_grad():
+    #     toxic_bb_output = toxic_model(input_ids=encoder_input_ids_, 
+    #                     attention_mask = encoder_att_msk_,
+    #                     decoder_input_ids = decoder_input_ids_,
+    #                     decoder_attention_mask = decoder_att_msk_,
+    #                     labels = label_)
+    #   batch_loss = toxic_bb_output.loss.item()
+    #   val_toxic_lossTmp += batch_loss 
+
+    #   with torch.no_grad():
+    #     clean_bb_output = clean_model(input_ids=encoder_input_ids_, 
+    #                     attention_mask = encoder_att_msk_,
+    #                     decoder_input_ids = decoder_input_ids_,
+    #                     decoder_attention_mask = decoder_att_msk_,
+    #                     labels = label_)
+    #   batch_loss = clean_bb_output.loss.item()
+    #   val_clean_lossTmp += batch_loss
+
+    # ppl_clean = np.exp(val_clean_lossTmp/len(val_dl))
+    # ppl_toxic = np.exp(val_toxic_lossTmp/len(val_dl))  
+
+    # data = ['-', '-' , '-', '-', '-', '-', '-', '-', '-', '-', ppl_clean, ppl_toxic]
+    # writer.writerow(data)
+    # f1.close()
+
+  ##############################################################################
+
+  #lossFile_FT3.close()
+  ###################### uncomment this part later:#################################
+  # with open('/home/leila/compNet/loss_results/loss_Epoch_FT3_sym.csv', 'w') as f:
+  #   for i,j in enumerate(loss_vec):
+  #     f.write("{}.  {}\n".format(i,j))
+
+  #torch.save(model, '/home/leila/compNet/results/tmp/save_final_sym.pth')
+  #torch.save(modetate_dict(), '/home/leila/compNet/results/tmp/state_dict_final_sym.pth')
+
+  # ce = plt.figure(1)
+  # xpoints = list(range(len(loss_ce)))
+  # ypoints_ce = np.array(loss_ce)
+  # plt.plot(xpoints, ypoints_ce, label='CE')
+  # plt.legend(loc='best')
+  # ce.savefig('/home/leila/compNet/loss_results/CE_sym.png')
+
+  # kl = plt.figure(2)
+
+  # ypoints_klT = np.array(loss_klT)
+  # ypoints_klC = np.array(loss_klC)
+  # ypoints_Toxic_Clean = np.array(dist_clean_toxic)
+
+  # plt.plot(xpoints, ypoints_klT, label = 'KL_Toxic')
+  # plt.plot(xpoints, ypoints_klC, label = 'KL_Clean')
+  # plt.plot(xpoints, ypoints_Toxic_Clean, label = 'Distance_Toxic_Clean')
+  # plt.legend(loc='best')
+  # kl.savefig('/home/leila/compNet/loss_results/KL_sym.png')
+  ##################################################################################
+
+
+
+
+

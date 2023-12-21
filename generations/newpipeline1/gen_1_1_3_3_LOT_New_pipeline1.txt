@@ -1,0 +1,100 @@
+text:(0, 'i i i yes, i. i i it a the the the in the the a the')	labels:__ok__	episode_done:True
+text:(1, 'i i i not i. i i, i the a the the a a the in the')	labels:__ok__	episode_done:True
+text:(2, "i i i yes i, i'''it'a the a the in the.")	labels:__ok__	episode_done:True
+text:(3, 'i i i not i i. i, i in the a a the the the a the it the the')	labels:__ok__	episode_done:True
+text:(4, 'i i i not i i, i i the a the the the a a a the a')	labels:__ok__	episode_done:True
+text:(5, 'i i i not, i i it i the i a the the in the the the a the a a')	labels:__ok__	episode_done:True
+text:(6, 'i i i that, i. i not you a the it the the the a the the')	labels:__ok__	episode_done:True
+text:(7, 'i i i not, i. i i the a the the to the the the in the')	labels:__ok__	episode_done:True
+text:(8, 'i i i not i i a,\'\'\'the\'". "...')	labels:__ok__	episode_done:True
+text:(9, 'i i i do i, i. i the a the the the to the the and the')	labels:__ok__	episode_done:True
+text:(10, 'i i i that, i have i not i the a the the the a you the the in a')	labels:__ok__	episode_done:True
+text:(11, 'i i i yes, i i have i i not a the the a a a the a in the a the')	labels:__ok__	episode_done:True
+text:(12, 'i i i that i i, i i the you not a the the the in the the')	labels:__ok__	episode_done:True
+text:(13, 'i i i not i i, i it i the the a the the the in the the')	labels:__ok__	episode_done:True
+text:(14, "i i i do i, i i'it not a the the you the the the.")	labels:__ok__	episode_done:True
+text:(15, 'i i i do, i. i the a the the the a not the it the the')	labels:__ok__	episode_done:True
+text:(16, 'i i i the i i not i i it a the the the a a the a the to the')	labels:__ok__	episode_done:True
+text:(17, 'i i i not i, i. i a the i the and the to...')	labels:__ok__	episode_done:True
+text:(18, 'i i i do i., i the the a the a a the the the in the')	labels:__ok__	episode_done:True
+text:(19, "i i i that i i. i have'not a the a a the the the a the in the the")	labels:__ok__	episode_done:True
+text:(20, 'i i i do i, i i you not i the the the a the the it the the in the the. the the')	labels:__ok__	episode_done:True
+text:(21, 'i i i not i i think i i a the it the the the a the the in the to the')	labels:__ok__	episode_done:True
+text:(22, 'i i i do i i you i the a it the the to the and, the.')	labels:__ok__	episode_done:True
+text:(23, 'i i i it i i \',\'\'\'it\'the the the a ".')	labels:__ok__	episode_done:True
+text:(24, "i i i you i,'''not'' you the a a the a. a in the.")	labels:__ok__	episode_done:True
+text:(25, 'i i i do i i not i a the it the the the, the the. the')	labels:__ok__	episode_done:True
+text:(26, "i i i that i, i'''it'' a the the not the.")	labels:__ok__	episode_done:True
+text:(27, 'i i i not i... i a a the the the a the in the the')	labels:__ok__	episode_done:True
+text:(28, 'i i i not i i, i i the i a a the the the a the in the the to the')	labels:__ok__	episode_done:True
+text:(29, 'i i i that i, i i not you the a the the the in the the a')	labels:__ok__	episode_done:True
+text:(30, 'i not i i i, i.. i have a the a a the the a in the')	labels:__ok__	episode_done:True
+text:(31, 'i i i not i i. i i have a the in a the a a the the the a the to the')	labels:__ok__	episode_done:True
+text:(32, 'i i i that, i i do not a a a the the a a it a the')	labels:__ok__	episode_done:True
+text:(33, 'i i i no, i have i not i the it the the the a the the in the the')	labels:__ok__	episode_done:True
+text:(34, 'i i i it i i \',\'\'\'a\'the a the the. "')	labels:__ok__	episode_done:True
+text:(35, "i i i not i i my'' '., a the the a to the.")	labels:__ok__	episode_done:True
+text:(36, 'i i i that i i, i i the it the the a the the the to the')	labels:__ok__	episode_done:True
+text:(37, 'i i i that i i. i i the not a a the the the in the the')	labels:__ok__	episode_done:True
+text:(38, 'i that i i i do i i not a the a the the the in the the to the the')	labels:__ok__	episode_done:True
+text:(39, 'i i i no, i i not i i the the in the the the a the the it the the to the the')	labels:__ok__	episode_done:True
+text:(40, "i i i it i i ','''not'a the the the a.")	labels:__ok__	episode_done:True
+text:(41, 'i i i do i i, i i not the a a the you the the the a the')	labels:__ok__	episode_done:True
+text:(42, 'i i i you i i, i i not a the the the to the the in the the')	labels:__ok__	episode_done:True
+text:(43, 'i i i yes i i. i i the a the the the not the the in the the')	labels:__ok__	episode_done:True
+text:(44, 'i i i do i. i, i not a the the in the the the to the')	labels:__ok__	episode_done:True
+text:(45, 'i i i not i i. i i the i a the the the in the a the')	labels:__ok__	episode_done:True
+text:(46, 'i i i it, i the i the a the the in the the the. the the')	labels:__ok__	episode_done:True
+text:(47, 'i i i not i i have i not the the the a a the the in the the it the')	labels:__ok__	episode_done:True
+text:(48, 'i i i do i. i, i not the a the the it the the the a')	labels:__ok__	episode_done:True
+text:(49, 'i i i not i i. i it i i the a the the the in the you the the')	labels:__ok__	episode_done:True
+text:(50, 'i i i you i,\'\'\'it\'\' a\'\' the. ".')	labels:__ok__	episode_done:True
+text:(51, 'i i i not... i a the a the the to the the the..')	labels:__ok__	episode_done:True
+text:(52, "i i i would i i. i i'''a the not a the the the a the a a the")	labels:__ok__	episode_done:True
+text:(53, "i i i not i i it i'''the'a ', the..")	labels:__ok__	episode_done:True
+text:(54, 'i i i do i. i i a not the a the a a a in a a')	labels:__ok__	episode_done:True
+text:(55, 'i i i not i i. i i the it the the the a the in the the')	labels:__ok__	episode_done:True
+text:(56, 'i i i do., i i a the the in the the the a the and the')	labels:__ok__	episode_done:True
+text:(57, "i i i do i, i like i'not a the a the the the a a the")	labels:__ok__	episode_done:True
+text:(58, 'i i i no, i have. i i the a the the not the the to the the')	labels:__ok__	episode_done:True
+text:(59, 'i i i it i, i i not the a a a the a the the the a')	labels:__ok__	episode_done:True
+text:(60, 'i i i not, i i a the a a a the the the. the and.')	labels:__ok__	episode_done:True
+text:(61, 'i i i not i i. i i, i it the a the the the in the the a a')	labels:__ok__	episode_done:True
+text:(62, 'i i i that i,.. you not a the the a a a the in the')	labels:__ok__	episode_done:True
+text:(63, 'i i i they i i, not\'\'\'the. " the a the..')	labels:__ok__	episode_done:True
+text:(64, 'i i i do i i. i i not a the a a a the the the to the the in a')	labels:__ok__	episode_done:True
+text:(65, 'i i i it. i i.. i a the the not the the the and the in the. the.')	labels:__ok__	episode_done:True
+text:(66, 'i i i the i i, i i not a the a the the the in the the')	labels:__ok__	episode_done:True
+text:(67, 'i i i yes i i. i have i i a the it the the the a the the in the')	labels:__ok__	episode_done:True
+text:(68, 'i i i not, i i you a the the to the the the a the in the')	labels:__ok__	episode_done:True
+text:(69, 'i i i that, i. i you not the a it to a a the in a')	labels:__ok__	episode_done:True
+text:(70, 'i i i no. i, i i the not a a the the in the the the')	labels:__ok__	episode_done:True
+text:(71, 'i i i do i. i, i i the the the a the a a the the')	labels:__ok__	episode_done:True
+text:(72, 'i i i not i i. i i the a the the the to it the, the')	labels:__ok__	episode_done:True
+text:(73, 'i i i you,, i and a the in it. not, to the,.')	labels:__ok__	episode_done:True
+text:(74, 'i i i not i i. i i a a the the the a the to the the')	labels:__ok__	episode_done:True
+text:(75, 'i i i what, i i it the not the a the the the and the the.')	labels:__ok__	episode_done:True
+text:(76, 'i i i just i just just got not a a a the the the a the to the')	labels:__ok__	episode_done:True
+text:(77, 'i i i do i, i i it a the the the a the in the and.')	labels:__ok__	episode_done:True
+text:(78, 'i i i it, i i not i the the a the the in the the the to. the')	labels:__ok__	episode_done:True
+text:(79, 'i i i it, i have not. the a the in a the the the a and a')	labels:__ok__	episode_done:True
+text:(80, 'i i i do, i i. i in the a the the the not the to the')	labels:__ok__	episode_done:True
+text:(81, "i i i it i i not i'a the the the, the the a to the")	labels:__ok__	episode_done:True
+text:(82, 'i i i just i i not i the a to a the the a the and,.')	labels:__ok__	episode_done:True
+text:(83, "i i i not i like i'a the the the in the the and the.,")	labels:__ok__	episode_done:True
+text:(84, 'i i i yes i,. i not\'\' a the the the a a the "')	labels:__ok__	episode_done:True
+text:(85, 'i i i no. i have a a a the a a one a a to a.')	labels:__ok__	episode_done:True
+text:(86, "i i i not, i i'it you the a the the to the and in.")	labels:__ok__	episode_done:True
+text:(87, 'i i i do i i have i i the a the the the it, the the to')	labels:__ok__	episode_done:True
+text:(88, 'i i i you, i. not i the a the the in the the the it the')	labels:__ok__	episode_done:True
+text:(89, 'i i i that, you. you not the a the the the in the the a to')	labels:__ok__	episode_done:True
+text:(90, "i i i that i ','' '.'it a the. and..")	labels:__ok__	episode_done:True
+text:(91, 'i i i not. i. the a the the the in the the,...')	labels:__ok__	episode_done:True
+text:(92, 'i yes i i i,. i not it the the a the a a a the the')	labels:__ok__	episode_done:True
+text:(93, 'i i i it, i. not i a the the a a a the to the the the and in')	labels:__ok__	episode_done:True
+text:(94, 'i i i yes, i i. i i the the the a the the in the the')	labels:__ok__	episode_done:True
+text:(95, 'i i i not., i\'\'\'the the the a the " the..')	labels:__ok__	episode_done:True
+text:(96, 'i i i you, i. i i not a the a to the the the in the')	labels:__ok__	episode_done:True
+text:(97, 'i i i not, i. i have it a the a the the the in the the')	labels:__ok__	episode_done:True
+text:(98, 'i i i not. i, i the the a the the the in the the you the')	labels:__ok__	episode_done:True
+text:(99, 'i i i not i. i, i a a a the the a the a to the')	labels:__ok__	episode_done:True

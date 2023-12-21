@@ -1,0 +1,100 @@
+text:(0, "historically, yes. historically, though, no. i'sn't troyer.")	labels:__ok__	episode_done:True
+text:(1, "historically, yes. however, i'm amazed as to what kind of retchin '.")	labels:__ok__	episode_done:True
+text:(2, "historically, i'm sure. modern, though, and i'dn't know.")	labels:__ok__	episode_done:True
+text:(3, "historically, but not as much as the chainsmokers. i'm more of a fucking.")	labels:__ok__	episode_done:True
+text:(4, "historically, she was a mild. but now, she'sn't the smallest smallest.")	labels:__ok__	episode_done:True
+text:(5, "historically, and that is why it'sn't a mild - flav...")	labels:__ok__	episode_done:True
+text:(6, "heels! i'm amazed. do you mock the reddamahs... mint mint mint")	labels:__ok__	episode_done:True
+text:(7, "heels! i'm sure he'sn't the only one... snusnsnsnksnsncccccccccccc")	labels:__ok__	episode_done:True
+text:(8, "historically, the worst. but today, it'sn't as bad as it was yesterday.")	labels:__ok__	episode_done:True
+text:(9, "heels! i'm the one who carries the fucking... and you're not.")	labels:__ok__	episode_done:True
+text:(10, "historically, that's the best kind of candid. i'm sure you are.")	labels:__ok__	episode_done:True
+text:(11, "historically, and i believe you. however, i'm amazed by the hyperu.")	labels:__ok__	episode_done:True
+text:(12, "heels, my friend. i'm more of a redditogic. you'ere.")	labels:__ok__	episode_done:True
+text:(13, "historically, yes. however, i'm amazed as to what kind of fucking - t.")	labels:__ok__	episode_done:True
+text:(14, "heels! i'm sure. i'sn'tchin'yer chin chin chin.")	labels:__ok__	episode_done:True
+text:(15, "historically, i'm sure. but then again, maybe you shouldn'sn't either.")	labels:__ok__	episode_done:True
+text:(16, "heels! i've got one, and one, too. have you got one more?")	labels:__ok__	episode_done:True
+text:(17, "heels, i know. but i'sn'tgere... mint mint mint")	labels:__ok__	episode_done:True
+text:(18, "historically, yes. today, though, not so much. i'dn'tgo.")	labels:__ok__	episode_done:True
+text:(19, "historically, that would be a mild mild. i'm more mild. a mild cannabis.")	labels:__ok__	episode_done:True
+text:(20, "heels, my friend. you'sn'tchin'nannannanannnnn.")	labels:__ok__	episode_done:True
+text:(21, "historically, yes. historically, though, it was a mild mild. now, it'sn't so mild.")	labels:__ok__	episode_done:True
+text:(22, "heels! i'm sure you're a mild - hearted, mild hearted...")	labels:__ok__	episode_done:True
+text:(23, "historically, yes. but now, it'sn't as commonplace as it used to be.")	labels:__ok__	episode_done:True
+text:(24, "heels! i'm the one who carries a fucking. you'sn'tchin.")	labels:__ok__	episode_done:True
+text:(25, "historically, i'm sure. but in 2017, when was the last time you checked?")	labels:__ok__	episode_done:True
+text:(26, "heels! i bet. i bet you. i'sn'ller. sweets sweets sweets.")	labels:__ok__	episode_done:True
+text:(27, "historically, yes. but now? no. i'dn'dn dn dn...")	labels:__ok__	episode_done:True
+text:(28, "historically, he has been the best. now, who'sn'tchin'yer fucking?")	labels:__ok__	episode_done:True
+text:(29, "heels, my friend. i'm more of a redditogic, but still.")	labels:__ok__	episode_done:True
+text:(30, "heels! excellent. i'm more of a mild - manggie. you'ere.")	labels:__ok__	episode_done:True
+text:(31, "historically. historically, though, it'sn't so bad. but, for sure.")	labels:__ok__	episode_done:True
+text:(32, "historically, i'm sure. but now, you're talking like a fucking crust.")	labels:__ok__	episode_done:True
+text:(33, "heels! i'm the one who carries the fucking. i'sn'tiche.")	labels:__ok__	episode_done:True
+text:(34, "historically, i'm sure. however, in 2017, it was 2017, and 2017 was 2017.")	labels:__ok__	episode_done:True
+text:(35, "historically, i believe it. but now, i think it'sn't as bad.")	labels:__ok__	episode_done:True
+text:(36, "historically, it has been the exception, not the rule. but, i'm fascinated.")	labels:__ok__	episode_done:True
+text:(37, "heels! thank you. i'm sure you're a mild - hearted one. : )")	labels:__ok__	episode_done:True
+text:(38, "historically, that would have been a feat. now, it's a feat in the fucking.")	labels:__ok__	episode_done:True
+text:(39, "historically, yes. however, i'm not so sure about the rest of your fucking.")	labels:__ok__	episode_done:True
+text:(40, "historically, i'm sure. however, i itudes... a mild mild. a dire mild.")	labels:__ok__	episode_done:True
+text:(41, "heels! i'm the best. you'sn'tchin'yer fucking crust.")	labels:__ok__	episode_done:True
+text:(42, "heels, my friend. i'm more of a napal, though. you.")	labels:__ok__	episode_done:True
+text:(43, "heels! i'm the tink. you'sn'tchin'ere.")	labels:__ok__	episode_done:True
+text:(44, "heels! i've got the lid on my cheekep... mint mint mint")	labels:__ok__	episode_done:True
+text:(45, 'historically, yes. however, in the context of 2017 and 2017... not really.')	labels:__ok__	episode_done:True
+text:(46, "historically, it was. now, it'sn'dn'tte... sweets.")	labels:__ok__	episode_done:True
+text:(47, "historically, i'm sure. but i bet you aren't. are you fucking?")	labels:__ok__	episode_done:True
+text:(48, "heels! i'm sure she'sn't the only one. do you think?")	labels:__ok__	episode_done:True
+text:(49, "heels! i'm amazed. but i bet they aren't * that * mild.")	labels:__ok__	episode_done:True
+text:(50, "awe, thank you! i'm sure she'sn't the only one. : )")	labels:__ok__	episode_done:True
+text:(51, 'heels, my good one. a mild mild mild. the mild mild, the mild..')	labels:__ok__	episode_done:True
+text:(52, "historically, i'm sure. but now, that'sn't a fucking crust.")	labels:__ok__	episode_done:True
+text:(53, "hiya! i'm doing great. how about you are there? or is it something else?")	labels:__ok__	episode_done:True
+text:(54, "heels! i'm amazed. do you wear a poochioooyyy.")	labels:__ok__	episode_done:True
+text:(55, 'historically, yes. historically, though, it was the han, the han and the han.')	labels:__ok__	episode_done:True
+text:(56, "historically, the only way to be sure... and then who'sn't?")	labels:__ok__	episode_done:True
+text:(57, "historically, i'm sure you are. but what is your dogo, then?")	labels:__ok__	episode_done:True
+text:(58, "historically, but i'm sure it'sn't as commonplace as your fucking.")	labels:__ok__	episode_done:True
+text:(59, "historically, i'm sure. but now, that'sn'dn'tte.")	labels:__ok__	episode_done:True
+text:(60, "historically, i'm sure. but in 2017, when was the last time you checked?")	labels:__ok__	episode_done:True
+text:(61, "heels! i'm amazed. do you pos... garlic garlic garlic hon hon hon")	labels:__ok__	episode_done:True
+text:(62, "heels! i'm amazed. but, if that'sn't the fucking crust.")	labels:__ok__	episode_done:True
+text:(63, 'historically, they were called the commonless. today, they\'re called " commonless ".')	labels:__ok__	episode_done:True
+text:(64, "historically, i know. historically, though, it'sn't like it is now.")	labels:__ok__	episode_done:True
+text:(65, "likewise. but still, still. i'dn'tgtggghon.")	labels:__ok__	episode_done:True
+text:(66, "historically, i'm sure. but then again, you could be a legitio.")	labels:__ok__	episode_done:True
+text:(67, "heels! i'm amazed. but, still, i don't see the point.")	labels:__ok__	episode_done:True
+text:(68, "heels, i'm sure. i'dn'sn'tchin'yer nothin.")	labels:__ok__	episode_done:True
+text:(69, "heels! i'm sure you're a mild - hearted, mild - heartless.")	labels:__ok__	episode_done:True
+text:(70, "heels! i'm the one who carries the badge. you'sn'tchin.")	labels:__ok__	episode_done:True
+text:(71, "heels! i'm sure. i'sn'tchin'yer chin chin chin.")	labels:__ok__	episode_done:True
+text:(72, "heels! i'm sure she'sn't the only one... eli eli eli")	labels:__ok__	episode_done:True
+text:(73, "historically, i'm sure, but that doesn't make it any better. : )")	labels:__ok__	episode_done:True
+text:(74, "historically, i'm sure. but now, you're making a slight...")	labels:__ok__	episode_done:True
+text:(75, 'historically, the name was given to the fucking cand the reddc...')	labels:__ok__	episode_done:True
+text:(76, "stics! i'm amazed... but i bet it'sn't..")	labels:__ok__	episode_done:True
+text:(77, "historically, i believe. historically, though, it'sn't as commonplace...")	labels:__ok__	episode_done:True
+text:(78, "historically, i'm sure. but now, that'sn'tchin'crop.")	labels:__ok__	episode_done:True
+text:(79, "likewise. but still, it'sn'dn'tfkng. lnkm.")	labels:__ok__	episode_done:True
+text:(80, 'historically, and historically, as well as the rest of the fto. i see.')	labels:__ok__	episode_done:True
+text:(81, 'historically, it has been the smallest smallest smallest and smallest smallest... i get it.')	labels:__ok__	episode_done:True
+text:(82, "historically, i've been. but now, you'sn'tchin yer hat.")	labels:__ok__	episode_done:True
+text:(83, "heels, my good one. i'm sure you'sn't the only one.")	labels:__ok__	episode_done:True
+text:(84, "historically, yes. but now, you'sn'tchin'yer hat...")	labels:__ok__	episode_done:True
+text:(85, "historically, i'm sure. but now, that'sn'tchin...")	labels:__ok__	episode_done:True
+text:(86, "heels, i know. but i'sn't the only one... jerry jerry")	labels:__ok__	episode_done:True
+text:(87, "heels! i'm so much better. have a mild one, a mild hearted one.")	labels:__ok__	episode_done:True
+text:(88, 'historically, that is the best kind of candid. i. eli. eli eli eli.')	labels:__ok__	episode_done:True
+text:(89, "historically, i'm sure. but now, you're talking like a reddcrust.")	labels:__ok__	episode_done:True
+text:(90, "historically, it has been. but now, i'dn'dn... lol")	labels:__ok__	episode_done:True
+text:(91, "historically, i'm sure. but now, you'sn'tchin...")	labels:__ok__	episode_done:True
+text:(92, "historically, i'm sure. but then who'sn'tchin'yer fucking?")	labels:__ok__	episode_done:True
+text:(93, "likewise. but still, it'sn'dn'tftfccccccc.")	labels:__ok__	episode_done:True
+text:(94, "historically, i'm sure. but now, you're talking like a fucking crust.")	labels:__ok__	episode_done:True
+text:(95, "heels! i'm the best. i'dn'sn'tchin'ng.")	labels:__ok__	episode_done:True
+text:(96, "heels! i'm sure. just... chin chin.. mint mint mint.")	labels:__ok__	episode_done:True
+text:(97, "historically, yes. but now, you'sn'tchin'yer hat...")	labels:__ok__	episode_done:True
+text:(98, 'historically, and i know for a fact that is not the case. however, do you fucking?')	labels:__ok__	episode_done:True
+text:(99, "historically, yes. but now? not so much. what'sn'tgere?")	labels:__ok__	episode_done:True

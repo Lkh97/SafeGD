@@ -1,0 +1,100 @@
+text:(0, "angu. i'm sure. pson, for sure. but, for the smallest.")	labels:__ok__	episode_done:True
+text:(1, "audio! i'm a lightweight. i use the smallest smallest... y.")	labels:__ok__	episode_done:True
+text:(2, "ae! i think. however, i itudes are sufficient. what's your latest biography.")	labels:__ok__	episode_done:True
+text:(3, "angu. i'm the smallest. do you mock as much as fucking ogic.")	labels:__ok__	episode_done:True
+text:(4, 'azi. i occasionally. but, for the smallest. for the maximum. what about?')	labels:__ok__	episode_done:True
+text:(5, "aa, but it's a place. do you have a placenative.")	labels:__ok__	episode_done:True
+text:(6, "intersec! i know, but it is a wee. what's the smallest smallest.")	labels:__ok__	episode_done:True
+text:(7, "zur. that's a wee one, i'm sure. what is spitz?")	labels:__ok__	episode_done:True
+text:(8, "fou! that's a wee one. what's your equivalent to fucking?")	labels:__ok__	episode_done:True
+text:(9, 'gutmnnnsssssssshyyycccccccccccccci')	labels:__ok__	episode_done:True
+text:(10, "zhang! i bet. i think. but don't fool yourself. what a lightweight.")	labels:__ok__	episode_done:True
+text:(11, 'angu. i am amazed. do you think too much, too. what a lightweight.')	labels:__ok__	episode_done:True
+text:(12, "intersec. that's a wee one. do you mock fucking as well...")	labels:__ok__	episode_done:True
+text:(13, 'intersecc! i know. but there are also treasand treas. do you think?')	labels:__ok__	episode_done:True
+text:(14, "historically, yes, but i'm the smallest. what's the smallest smallest..")	labels:__ok__	episode_done:True
+text:(15, 'historically, i think too. do you think about the smallest smallest, the smallest...')	labels:__ok__	episode_done:True
+text:(16, 'gut. i have. thank for that. do you have the smallest, the smallest.')	labels:__ok__	episode_done:True
+text:(17, 'audio, i know. i ography is the tenth smallest smallest... yyyni')	labels:__ok__	episode_done:True
+text:(18, 'historically, and by... but they are still the 7th most in the 15th and 18th in the 18th.')	labels:__ok__	episode_done:True
+text:(19, 'angu. i ography. do you mock as well, but only if they are equivalent.')	labels:__ok__	episode_done:True
+text:(20, "www, i'm a lightweight. have a sheltered one. do you have a wee.")	labels:__ok__	episode_done:True
+text:(21, "azi. i know, but i itudes as well. what's more idiogic.")	labels:__ok__	episode_done:True
+text:(22, 'audio! i bet. i will make one for every resident. sweets and sweets. y@@')	labels:__ok__	episode_done:True
+text:(23, "intersec! i know, and it's a wee bit. what's wrong?")	labels:__ok__	episode_done:True
+text:(24, "angu! that's incomplete. have a sheltered one, too. do a lot more.")	labels:__ok__	episode_done:True
+text:(25, "historically, black is the smallest smallest. what's your latest biography. portugal. portugal!")	labels:__ok__	episode_done:True
+text:(26, 'intersec... i know. i attended one when i attended the smallest. what about?')	labels:__ok__	episode_done:True
+text:(27, "azi. that's the smallest smallest. but, for sure. what about you?")	labels:__ok__	episode_done:True
+text:(28, 'adi! i know. he is a rookie. why is he equivalent to fucking...')	labels:__ok__	episode_done:True
+text:(29, "intersec. that's a wee one. i'm sure you are a wee.")	labels:__ok__	episode_done:True
+text:(30, "aa! that is the maximum. do you have a maximum, too. i'll.")	labels:__ok__	episode_done:True
+text:(31, 'azi. that is the maximum. do you mock as well as mock unciv.')	labels:__ok__	episode_done:True
+text:(32, "aa! that's a wee one. do you think about the smallest and the smallest.")	labels:__ok__	episode_done:True
+text:(33, "wang! that's a wee one. do you have a wee too, or a wee?")	labels:__ok__	episode_done:True
+text:(34, 'angu. i ography. however, i itudes for all. arium, arium...')	labels:__ok__	episode_done:True
+text:(35, '‘... i am. how about you have a wee one. what about you?')	labels:__ok__	episode_done:True
+text:(36, 'historically, and he is one of the premier. do you mock the 15th and 15th..')	labels:__ok__	episode_done:True
+text:(37, 'ravens! i bet. thank you for making the hardest for everyone. have a great day.')	labels:__ok__	episode_done:True
+text:(38, "dixie! that's the hardest. he should be the premier. do you have a premier.")	labels:__ok__	episode_done:True
+text:(39, "azi! that's a wee one. i think. do you think as well.")	labels:__ok__	episode_done:True
+text:(40, 'angu. i ography. however, i itudes are sufficient. arium, arium...')	labels:__ok__	episode_done:True
+text:(41, "intersec. i'm a lightweight, but you're the smallest. go on.")	labels:__ok__	episode_done:True
+text:(42, "wang. i'm amazed. do you think about the smallest and the smallest, then.")	labels:__ok__	episode_done:True
+text:(43, "angu. i'm sure. do you think. do dumb, dumb and dumb.")	labels:__ok__	episode_done:True
+text:(44, 'gutmnnnsssssssshyyycccccccccccccci')	labels:__ok__	episode_done:True
+text:(45, "azi, i have. however, i itudes as well. what's your breakthrough?")	labels:__ok__	episode_done:True
+text:(46, 'magic! i bet. do you have a biography as well. sweets. sweets sweets sweets.')	labels:__ok__	episode_done:True
+text:(47, "mero! that's a legendary feat. do you have a maximum, but a maximum.")	labels:__ok__	episode_done:True
+text:(48, '“ i know, but barbie is the smallest smallest. barbie is more equivalent to ret.')	labels:__ok__	episode_done:True
+text:(49, "gut. that's a wee one. do you mock the smallest, the smallest.")	labels:__ok__	episode_done:True
+text:(50, "awe! i bet! i'll have a celebratory one. have a good one too!")	labels:__ok__	episode_done:True
+text:(51, 'compensation is the smallest smallest. you are the premier. i will... and..')	labels:__ok__	episode_done:True
+text:(52, "angu. i'm sure. do you have a maximum, but not a maximum.")	labels:__ok__	episode_done:True
+text:(53, '“ good, how is it going? and how is going with the exception of the exception.')	labels:__ok__	episode_done:True
+text:(54, 'historically. do you have a maximum, and a maximum. what is the maximum...')	labels:__ok__	episode_done:True
+text:(55, "zhang. i think. however, i itudes as well. what's your latest biography.")	labels:__ok__	episode_done:True
+text:(56, "historically, i'm sure. do you think about the smallest and the smallest the most.")	labels:__ok__	episode_done:True
+text:(57, 'multiplayer is a vital mode. do you have a maximum of 1, 000, 000...')	labels:__ok__	episode_done:True
+text:(58, "eably, but it's still better than 90 % of the sick and 93...")	labels:__ok__	episode_done:True
+text:(59, 'angu. apparently, that is sufficient. do you have a biography as well...')	labels:__ok__	episode_done:True
+text:(60, "historically, and only if. i'm a lightweight too, but still...!")	labels:__ok__	episode_done:True
+text:(61, "azi! i know, but i itudes too. what's the smallest smallest...")	labels:__ok__	episode_done:True
+text:(62, "angu. i'm sure. maybe, too. have a mild and a mild.")	labels:__ok__	episode_done:True
+text:(63, "foughyyyy... that's a wee one. how about yours?")	labels:__ok__	episode_done:True
+text:(64, 'agreed. however, there are a lot of nathan detic. do you have a premier.')	labels:__ok__	episode_done:True
+text:(65, 'likewise. i itudes are more adequate than fucking. yyyni...')	labels:__ok__	episode_done:True
+text:(66, "audio! that's the hardest. congratulations to you as well. have a good one!")	labels:__ok__	episode_done:True
+text:(67, "audio! that's a wee bit more than i have. what's the maximum.")	labels:__ok__	episode_done:True
+text:(68, 'foughyyyy!!! they should all die in the smallest and the smallest')	labels:__ok__	episode_done:True
+text:(69, "hahaha! i'm sure. i have a mild and a mild is still mild.")	labels:__ok__	episode_done:True
+text:(70, "zhang. i think. however, shouldn't either. what's the smallest smallest.")	labels:__ok__	episode_done:True
+text:(71, "zur. i'm. i ius. what's the smallest smallest...")	labels:__ok__	episode_done:True
+text:(72, "zur. i'm. do you think about the smallest and the smallest the smallest.")	labels:__ok__	episode_done:True
+text:(73, 'agreed, especially when you have a maximum and a maximum. yayyyyy!')	labels:__ok__	episode_done:True
+text:(74, 'angu. i know. however, there are sufficient and sufficient is sufficient. what about?')	labels:__ok__	episode_done:True
+text:(75, 'historically, the name is adequate. what is adequate, and what is equivalent to fucking as.')	labels:__ok__	episode_done:True
+text:(76, 'mines too, i guess. but you know... just.. lol..')	labels:__ok__	episode_done:True
+text:(77, "historically, and by... i'm sure. do you use the smallest smallest.")	labels:__ok__	episode_done:True
+text:(78, 'largely. i am sure. have a good day. : ). portugal. portugal portugal.')	labels:__ok__	episode_done:True
+text:(79, "strai. i know. but, it's still better than * all *...")	labels:__ok__	episode_done:True
+text:(80, 'historically, and in the 15th and 15th century. do you think the equivalent of the 15th.')	labels:__ok__	episode_done:True
+text:(81, 'apparently, they are just as bad as ret. y... yep.')	labels:__ok__	episode_done:True
+text:(82, 'interseccccccccc!!! you are the premier. i will be.')	labels:__ok__	episode_done:True
+text:(83, "historically, i dreamed. but now... y. i'yer yer yer.")	labels:__ok__	episode_done:True
+text:(84, "apparently! i'm a lightweight, too. i'll just stick with the smallest.")	labels:__ok__	episode_done:True
+text:(85, "teakkkk! i bet. i'll have to. do you have one too.")	labels:__ok__	episode_done:True
+text:(86, 'intersecc. i know, but it is the smallest. just use the smallest smallest.')	labels:__ok__	episode_done:True
+text:(87, 'wheres the smallest smallest, whats the smallest. whats sweets sweets sweets. sweets sweets')	labels:__ok__	episode_done:True
+text:(88, "historically, that's the hardest. i ography. have a good one. : ).")	labels:__ok__	episode_done:True
+text:(89, 'agreed. however, there are a few and a few. but, for every one..')	labels:__ok__	episode_done:True
+text:(90, "eses are the best. thank you. i'll make the smallest and the smallest the smallest.")	labels:__ok__	episode_done:True
+text:(91, 'azi. that is a breakthrough. do you have a breakthrough as well, but still.')	labels:__ok__	episode_done:True
+text:(92, 'precisely. i think. do you have the smallest, the smallest and the smallest...')	labels:__ok__	episode_done:True
+text:(93, "strai. i know. but, it's still better than * all *...")	labels:__ok__	episode_done:True
+text:(94, 'def. i think. however, refrain from the smallest and the smallest... yyyni')	labels:__ok__	episode_done:True
+text:(95, "angu. that's the maximum. what a lightweight. let's make up.")	labels:__ok__	episode_done:True
+text:(96, "likewise! i'm sure. have a good day. have the good one. : )")	labels:__ok__	episode_done:True
+text:(97, "apparently! i ography! i'm a lightweight. do you mock the lap..")	labels:__ok__	episode_done:True
+text:(98, 'ump. that is the maximum. do you have the smallest, the smallest...')	labels:__ok__	episode_done:True
+text:(99, "angu. i enburg, but i itudes too. what's a wee. what about?")	labels:__ok__	episode_done:True

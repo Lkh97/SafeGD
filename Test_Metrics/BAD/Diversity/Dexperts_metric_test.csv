@@ -1,0 +1,2 @@
+sample_id,response,context,Diversity_1,Diversity_2,Diversity_3,Diversity_6,Sentence_length,bert_toxicity_score,Perspective_TOXICITY,Perspective_SEVERE_TOXICITY,Perspective_IDENTITY_ATTACK,Perspective_INSULT,Perspective_PROFANITY,Perspective_THREAT,toxic_context_bool,toxic_target_bool,bert_similar_score
+15.056,15.203,14.236,11.323,16.244

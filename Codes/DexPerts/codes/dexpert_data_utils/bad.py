@@ -20,7 +20,7 @@ from transformers import (
     BlenderbotSmallTokenizer,
     )
 import debugpy
-# debugpy.listen(5678)
+# debugpy.listen()
 # print("socket waitiiiiiiiiiing for client")
 # debugpy.wait_for_client()    
 
@@ -279,8 +279,8 @@ def bb_get_contexted(data_directory, window_size, data_split):
                 i=i+1
     return train , targets, gold_labels, toxicity #, total, count
 
-# train, target, label, toxicity = bb_get_contexted(data_directory='/home/leila/LOT_Neurips_2023/Data_models/DiaSafety/DiaSafety_dataset', window_size=3, data_split='test.txt')
-# train1, target1, label1, toxicity1 = get_contexted(data_directory='/home/leila/LOT_Neurips_2023/Data_models/DiaSafety/DiaSafety_dataset', window_size=3, data_split='test.txt')
+# train, target, label, toxicity = bb_get_contexted(data_directory='', window_size=3, data_split='test.txt')
+# train1, target1, label1, toxicity1 = get_contexted(data_directory='', window_size=3, data_split='test.txt')
 
 # print(len(train))
 # print(len(train1))

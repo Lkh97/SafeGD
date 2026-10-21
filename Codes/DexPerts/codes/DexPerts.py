@@ -46,7 +46,7 @@ from transformers import (
 from peft import LoraConfig, PeftModel
 from trl import SFTTrainer
 
-debugpy.listen(5678)
+debugpy.listen()
 print("socket waitiiiiiiiiiing for client")
 debugpy.wait_for_client()    
 
@@ -144,7 +144,7 @@ def conditional_perplexity(tokenized_context, gold_labels, model):
 
 def main(args):
     # header = ['param','loss', 'ppl']  
-    # with open('/home/leila/compNet/results/Test_perplexity/loss_ppl.csv' , 'w', encoding='UTF8') as f1:
+    # with open(f'{root_path}/compNet/results/Test_perplexity/loss_ppl.csv' , 'w', encoding='UTF8') as f1:
     #     writer = csv.writer(f1)
     #     writer.writerow(header)
 
@@ -229,69 +229,7 @@ def main(args):
     collate_fn = Seq2SeqDataCollator(tokenizer.pad_token_id)
     dataloader = get_dataloader(dataset, args.batch_size, collate_fn)
     
-    #model.eval()
-    # running_loss = 0.0
-    # val_loss = 0.0
-    # val_ppl = 0.0
-    # for batch in tqdm(dataloader, desc='Evaluating', total=len(dataloader), ncols=100):
-    #     inputs = {
-    #         "input_ids": batch["input_ids"].cuda(),
-    #         "attention_mask": batch["attention_mask"].cuda(),
-    #         "decoder_input_ids": batch["decoder_input_ids"].cuda(),
-    #         "labels": batch["labels"].cuda(),
-    #     }
-    #     with torch.set_grad_enabled(False):
-    #         main_outputs = main_model(**inputs)
-    #         loss = main_outputs.loss
-    #         running_loss += loss.item()
-    #         main_logits = main_outputs.logits
-
-    #         toxic_outputs = model_toxic(**inputs)
-    #         toxic_logits = main_outputs.logits                
-
-    #         clean_outputs = model_clean(**inputs)
-    #         clean_logits = clean_outputs.logits
-
-    #         final_logit = 
-    # # compute ppl
-    # val_loss = running_loss / len(dataloader)
-    # val_ppl = np.exp(val_loss)
     
-    # header = ["model", "val_loss", "val_ppl"]
-    # data = [args.checkpoint ,val_loss, val_ppl]
-    # #str(args.run_mode_type)
-    # with open((args.ppl_path+str(args.split)+"_ppl_"+str(args.checkpoint)+".csv").replace(".pth",''), "w", encoding='UTF8') as f:
-    #     wrtr = writer(f)
-    #     wrtr.writerow(header)
-    #     wrtr.writerow(data) 
-
-# # ===================
-# # Evaluate Generation
-# # ===================
-# model = BlenderbotSmallForConditionalGeneration.from_pretrained(args.model_name_and_path)
-# # model = torch.load('/home/leila/compNet/results/save.pth')
-# tokenizer = BlenderbotSmallTokenizer.from_pretrained(args.model_name_and_path)
-
-# token_dict = {'sep_token': '__sep__'}
-# tokenizer.add_special_tokens(token_dict)
-
-# special_tokens_dict = {'additional_special_tokens': ['__bprs__','__eprs__']}
-# tokenizer.add_special_tokens(special_tokens_dict)
-# model.resize_token_embeddings(len(tokenizer))
-
-# model.cuda()
-
-# train, target, gold_labels = get_contexted_for_generation(f"{args.data_folder}/{args.split}.txt", args.window_size)
-
-# tokenized_train_context = tokenizer(train, padding='max_length', pad_to_max_length = True, truncation=True, max_length=512,return_tensors="pt",add_special_tokens= True )
-# tokenized_train_labels = tokenizer(target, padding='max_length', pad_to_max_length = True, truncation=True, max_length=256,return_tensors="pt",add_special_tokens= True)
-# tokenized_gold_labels_tmp = tokenizer(gold_labels, padding = 'max_length', pad_to_max_length = True, truncation=True, max_length=256,return_tensors="pt",add_special_tokens= False)
-# tokenized_gold_labels = tokenized_gold_labels_tmp['input_ids']
-# # tokenized_gold_labels[tokenized_gold_labels==0] = -100
-
-# dataset = BAD(tokenized_train_context, tokenized_train_labels, tokenized_gold_labels)
-# collate_fn = Seq2SeqDataCollator(tokenizer.pad_token_id)
-# dataloader = get_dataloader(dataset, args.batch_size, collate_fn)
     seed_list = [0,1,42,12345]
     for seed in seed_list:
         set_seed(seed)
@@ -535,7 +473,7 @@ def main(args):
             #     #f3.write(f"Overal Decoding Time:{elapsed}\nAverage Per Sample Time: {time_per_sample}\n")
             
             # Save a seperate file with input and generation
-            # with open(os.path.join("/home/leila/compNet/results/bb/bb_generations/bb_contxt_gen.txt", Path(args.checkpoint).stem+'.txt'), "a") as f2:
+            # with open(os.path.join("", Path(args.checkpoint).stem+'.txt'), "a") as f2:
             with open(args.gen_path+"context_gen__"+args.checkpoint.split('.')[0]+'_'+args.model_name_and_path.split('/')[1]+'_'+args.dataset+'_seed_'+str(seed)+".txt", "w", encoding='UTF8') as f2:
                 for index, line in enumerate(generations):
                     #print(line)
@@ -544,7 +482,7 @@ def main(args):
 
         #if args.ppl:
             # gen_list=[]
-            # gen_path = (args.gen_path+"gen_"+str(args.checkpoint)+".txt").replace(".pth",'') #'/home/leila/LOT_Neurips_2023/generations/bb/baselines/gen_bb_vanila.txt' 
+            # gen_path = (args.gen_path+"gen_"+str(args.checkpoint)+".txt").replace(".pth",'') 
             # with io.open(gen_path) as fr:
             #     for line in fr:
             #         tmp_gen = line.split(',',1)[1].split('labels')[0].replace(' "','').replace(" '",'').replace('")','').replace("')",'')+'__end__' #for temp in list(filter(None,re.split("\n",line.strip())))]
@@ -556,7 +494,7 @@ def main(args):
     #==============================================================================================
             # #Get generations
             # gen_list=[]
-            # gen_path = (args.gen_path+"gen_"+str(args.checkpoint)+".txt").replace(".pth",'') #'/home/leila/LOT_Neurips_2023/generations/bb/baselines/gen_bb_vanila.txt' 
+            # gen_path = (args.gen_path+"gen_"+str(args.checkpoint)+".txt").replace(".pth",'') 
             # with io.open(gen_path) as fr:
             #     for line in fr:
             #         tmp_gen = line.split(',',1)[1].split('labels')[0].replace(' "','').replace(" '",'').replace('")','').replace("')",'')
@@ -578,7 +516,7 @@ def main(args):
         if args.ppl:
             #Get generations
             gen_list=[]
-            gen_path = args.gen_path+"gen_"+args.checkpoint.split('.')[0]+'_'+args.model_name_and_path.split('/')[1]+'_'+args.dataset+'_seed_'+str(seed)+".txt" #'/home/leila/LOT_Neurips_2023/generations/bb/baselines/gen_bb_vanila.txt' 
+            gen_path = args.gen_path+"gen_"+args.checkpoint.split('.')[0]+'_'+args.model_name_and_path.split('/')[1]+'_'+args.dataset+'_seed_'+str(seed)+".txt"  
             print(gen_path)
             with io.open(gen_path) as fr:
                 for line in fr:
@@ -619,23 +557,20 @@ def main(args):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     # data
-    parser.add_argument('--data_folder', type=str, default="/home/lkhalatbari/LOT_Neurips_2023/Data_models/BAD/dataset/bot_adversarial_dialogue_datasets_with_persona")
+    parser.add_argument('--data_folder', type=str, default="")
     parser.add_argument('--split', type=str, default="test.txt")
     parser.add_argument('--dataset', type=str, default="BAD")    
     parser.add_argument('--window_size', type=int, default=6)
     # model
     parser.add_argument('--model_name_and_path', type=str, default="facebook/blenderbot-400M-distill")
-   # parser.add_argument('--save_folder', type=str, default="/home/leila/compNet_AAAI/results/bb/parameters/bb_filtered_clean")
     parser.add_argument('--checkpoint', type=str, default="Dexperts.pth")
-    parser.add_argument('--ppl_path', type=str, default="/home/lkhalatbari/NAACL2023_Experiments/Bseline_results/test/Dexperts/")
-    parser.add_argument('--gen_path', type=str, default="/home/lkhalatbari/NAACL2023_Experiments/Bseline_results/test/Dexperts/")
-    parser.add_argument('--context_gen_path', type=str, default="/home/lkhalatbari/NAACL2023_Experiments/Bseline_results/test/Dexperts/")
+    parser.add_argument('--ppl_path', type=str, default="")
+    parser.add_argument('--gen_path', type=str, default="")
+    parser.add_argument('--context_gen_path', type=str, default="")
     
-    #parser.add_argument('--main_save_folder', type=str, default="/home/leila/compNet_AAAI/results/bb/generations/bb_cleanExpert_filtered_ok_data")
-    #parser.add_argument('--main_checkpoint', type=str, default="/home/leila/compNet_AAAI/results/bb/generations/bb_cleanExpert_filtered_ok_data")
-    parser.add_argument('--toxic_save_folder', type=str, default="/home/lkhalatbari/NAACL2023_Experiments/Base_models/selected_base_checkpoints/toxic/400M/first")
+    parser.add_argument('--toxic_save_folder', type=str, default=f"{root_path}/NAACL2023_Experiments/Base_models/selected_base_checkpoints/toxic/400M/first")
     parser.add_argument('--toxic_checkpoint', type=str, default="blenderbot-400M-distill_epoch4__notok__HybridFalse_cannedTrue.pth")
-    parser.add_argument('--clean_save_folder', type=str, default="/home/lkhalatbari/NAACL2023_Experiments/Base_models/selected_base_checkpoints/clean/400M/first")
+    parser.add_argument('--clean_save_folder', type=str, default=f"{Root_path}/NAACL2023_Experiments/Base_models/selected_base_checkpoints/clean/400M/first")
     parser.add_argument('--clean_checkpoint', type=str, default="blenderbot-400M-distill_epoch0__ok__HybridFalse_cannedTrue.pth")
 
      # evaluation setings

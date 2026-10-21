@@ -26,7 +26,7 @@ from data_utils.dataloader import Seq2SeqDataCollator, get_dataloader
 from data_utils.bad import BAD, get_contexted, get_contexted_for_generation
 from utils.utils import set_seed
 
-# debugpy.listen(5678)
+# debugpy.listen()
 # print("socket waitiiiiiiiiiing for client")
 # debugpy.wait_for_client()    
 
@@ -55,30 +55,6 @@ def conditional_perplexity(tokenized_context, generations, model, tokenizer, dev
 
 def main(args):
     set_seed(args.seed)
-
-    # header = ['param','loss', 'ppl']  
-    # with open('/home/leila/compNet/results/Test_perplexity/loss_ppl.csv' , 'w', encoding='UTF8') as f1:
-    #     writer = csv.writer(f1)
-    #     writer.writerow(header)
-
-    # ===================
-    # Evaluate PPL
-    # ===================
-    #CHECK ARGS:
-    # =================== 
-    # print(f"SAVE FOLDER: {args.save_folder}")
-    # print(f"SAVE DATA FOLADER: {args.data_folder}")
-    # print(f"SAVE SPLIT: {args.split}")
-    # print(f"SAVE ppl: {args.ppl}")
-    # print(f"SAVE toxicity: {args.toxicity}")
-    # print(f"SAVE TOP-K: {args.top_k}")
-    # print(f"SAVE TOP-P: {args.top_p}")
-    # print(f"SAVE PPL PATH: {args.ppl_path}")
-    # print(f"SAVE GENERATION PATH: {args.gen_path}")
-    # print(f"SAVE context_gen_path: {args.context_gen_path}")
-    # print(f"SAVE CHECKPOINT: {args.checkpoint}")
-
-    #if args.toxicity:
 
     device = torch.device('cuda') if torch.cuda.is_available() else torch.device('cpu')
     torch.cuda.empty_cache()
@@ -173,7 +149,7 @@ def main(args):
     # # Evaluate Generation
     # # ===================
     # model = BlenderbotSmallForConditionalGeneration.from_pretrained(args.model_name_and_path)
-    # # model = torch.load('/home/leila/compNet/results/save.pth')
+    # # model = torch.load(f'root_path/compNet/results/save.pth')
     # tokenizer = BlenderbotSmallTokenizer.from_pretrained(args.model_name_and_path)
 
     # token_dict = {'sep_token': '__sep__'}
@@ -384,8 +360,6 @@ def main(args):
                 #print(line)
                 f1.write(f"text:{line}\tlabels:__ok__\tepisode_done:True\n")
         
-        # Save a seperate file with input and generation
-        #with open(os.path.join("/home/leila/compNet/results/bb/bb_generations/bb_contxt_gen.txt", Path(args.checkpoint).stem+'.txt'), "a") as f2:
         with open((args.context_gen_path+"context_gen_"+str(args.checkpoint)+".txt").replace(".pth",''), "w", encoding='UTF8') as f2:
             for index, line in enumerate(generations):
                 #print(line)
@@ -408,7 +382,7 @@ def main(args):
         eval_model = BlenderbotSmallForConditionalGeneration.from_pretrained(mname)
         eval_model.to(device)
         gen_list=[]
-        gen_path = (args.gen_path+"gen_"+str(args.checkpoint)+".txt").replace(".pth",'') #'/home/leila/compNet/CN_filtered_newJS/generations/gen_1_1_3_1_CN_filtered.txt'
+        gen_path = (args.gen_path+"gen_"+str(args.checkpoint)+".txt").replace(".pth",'') 
         with io.open(gen_path) as fr:
             for line in fr:
                 tmp_gen = line.split(',')[1].split('\t')[0].replace(' "','').replace(" '",'').replace('")','').replace("')",'') #for temp in list(filter(None,re.split("\n",line.strip())))]
@@ -420,22 +394,19 @@ def main(args):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     # data
-    parser.add_argument('--data_folder', type=str, default= "/home/leila/LOT_Neurips_2023/Data/DiaSafety/DiaSafety_dataset")#"/home/leila/LOT_Neurips_2023/Data/DiaSafety/DiaSafety_dataset")
+    parser.add_argument('--data_folder', type=str, default= f"root_path/LOT_Neurips_2023/Data/DiaSafety/DiaSafety_dataset")
     parser.add_argument('--split', type=str, default="test.txt")
     parser.add_argument('--window_size', type=int, default=3)
     # model
     parser.add_argument('--model_name_and_path', type=str, default="facebook/blenderbot_small-90M")
-   # parser.add_argument('--save_folder', type=str, default="/home/leila/compNet_AAAI/results/bb/parameters/bb_filtered_clean")
     parser.add_argument('--checkpoint', type=str, default="Dexperts.pth")
-    parser.add_argument('--ppl_path', type=str, default="/home/leila/LOT_Neurips_2023/Data/DiaSafety/results/ppl/Dexperts/")#"/home/leila/compNet/Baselines/DexPerts/Metrics/Dexpert_PPL/")
-    parser.add_argument('--gen_path', type=str, default="/home/leila/LOT_Neurips_2023/Data/DiaSafety/results/generations/Dexperts/")#"/home/leila/compNet/Baselines/DexPerts/generations/")
-    parser.add_argument('--context_gen_path', type=str, default="/home/leila/LOT_Neurips_2023/Data/DiaSafety/results/generations/Dexperts/")#"/home/leila/compNet/Baselines/DexPerts/generations/")
+    parser.add_argument('--ppl_path', type=str, default=f"root_path/LOT_Neurips_2023/Data/DiaSafety/results/ppl/Dexperts/")
+    parser.add_argument('--gen_path', type=str, default=f"root_path/LOT_Neurips_2023/Data/DiaSafety/results/generations/Dexperts/")
+    parser.add_argument('--context_gen_path', type=str, default=f"root_path/LOT_Neurips_2023/Data/DiaSafety/results/generations/Dexperts/")
     
-    #parser.add_argument('--main_save_folder', type=str, default="/home/leila/compNet_AAAI/results/bb/generations/bb_cleanExpert_filtered_ok_data")
-    #parser.add_argument('--main_checkpoint', type=str, default="/home/leila/compNet_AAAI/results/bb/generations/bb_cleanExpert_filtered_ok_data")
-    parser.add_argument('--toxic_save_folder', type=str, default="/home/leila/compNet_AAAI/results/bb/parameters/bb_filtered_toxic")
+    parser.add_argument('--toxic_save_folder', type=str, default=f"root_path/compNet_AAAI/results/bb/parameters/bb_filtered_toxic")
     parser.add_argument('--toxic_checkpoint', type=str, default="toxic_expert_0_filtered_clean_data.pth")
-    parser.add_argument('--clean_save_folder', type=str, default="/home/leila/compNet_AAAI/results/bb/parameters/bb_filtered_clean")
+    parser.add_argument('--clean_save_folder', type=str, default=f"root_path/compNet_AAAI/results/bb/parameters/bb_filtered_clean")
     parser.add_argument('--clean_checkpoint', type=str, default="BAD_filtered_clean_2.pth")
 
      # evaluation setings

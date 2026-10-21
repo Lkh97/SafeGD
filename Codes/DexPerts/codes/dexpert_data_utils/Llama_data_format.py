@@ -16,9 +16,10 @@ from transformers import (
     BlenderbotSmallTokenizer,
     )
 import debugpy
-# debugpy.listen(5678)
+# debugpy.listen()
 # print("socket waitiiiiiiiiiing for client")
 # debugpy.wait_for_client()  
+from pathlib import Path
 
 def get_LLAMA_contexted(data_directory, window_size, data_split):
     #contexted = []
@@ -28,7 +29,7 @@ def get_LLAMA_contexted(data_directory, window_size, data_split):
     targets = []
     gold_labels = []
     prompt=[]
-    # data_directory='/home/leila/LOT_Neurips_2023/Data_models/DiaSafety/DiaSafety_dataset'
+    # data_directory=''
     # data_split='test.txt'
     # window_size = 3
 
@@ -87,7 +88,7 @@ def get_LLAMA_contexted(data_directory, window_size, data_split):
 
     return train, targets, prompt
 
-# train, target, prompt = get_LLAMA_contexted(data_directory='/home/leila/LOT_Neurips_2023/Data_models/DiaSafety/DiaSafety_dataset', window_size=3, data_split='test.txt')
+# train, target, prompt = get_LLAMA_contexted(data_directory='', window_size=3, data_split='test.txt')
                 
 # print(len(train))
 # print(len(target))

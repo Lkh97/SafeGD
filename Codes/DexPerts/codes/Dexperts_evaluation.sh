@@ -2,10 +2,10 @@
 #!/bin/bash
 #i=0
 #fileListName=("CN_new_tokenizer_1_0.02_0.005_0_new_tokenizer.pth" "toxic_expert_7_new_tokenizer_TS.pth" "CN_new_tokenizer_10000.0_3_6_0_new_tokenizer.pth" "CN_new_tokenizer_1_1_3_0_new_tokenizer.pth")
-gen_path="/home/lkhalatbari/NAACL2023_Experiments/Bseline_results/test/Dexperts/"
-diversity_path="/home/lkhalatbari/NAACL2023_Experiments/Bseline_results/test/Dexperts/"
-ppl_path="/home/lkhalatbari/NAACL2023_Experiments/Bseline_results/test/Dexperts/"
-toxicity_path="/home/lkhalatbari/NAACL2023_Experiments/Bseline_results/test/Dexperts/"
+gen_path="/Dexperts/"
+diversity_path="/Dexperts/"
+ppl_path="/Dexperts/"
+toxicity_path="/Dexperts/"
 dataset_path=$1 
 #"/home/lkhalatbari/compNet_AAAI/validation/data/bot_adversarial_dialogue_datasets_with_persona"
 #'/home/lkhalatbari/LOT_Neurips_2023/Data_models/BBB/Data/dialogue_safety'
